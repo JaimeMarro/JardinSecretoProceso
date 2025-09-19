@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using JardinSecretoPrueba1.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace JardinSecretoPrueba1.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ProductosController : Controller
     {
         private readonly JardinSecretoContext _context;
@@ -47,7 +49,8 @@ namespace JardinSecretoPrueba1.Controllers
         // GET: Productos/Create
         public IActionResult Create()
         {
-            ViewData["CategoriaId"] = new SelectList(_context.Categoria, "CategoriaId", "CategoriaId");
+            ViewData["CategoriaId"] = new SelectList(_context.Categoria, "CategoriaId", "Nombre");
+            
             return View();
         }
 
@@ -56,17 +59,45 @@ namespace JardinSecretoPrueba1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProductoId,Nombre,Descripcion,Precio,Disponible,ImagenUrl,CategoriaId")] Producto producto)
+        public async Task<IActionResult> Create([Bind("ProductoId,Nombre,Descripcion,Precio,Disponible,ImagenUrl,CategoriaId, archivoAdjunto")] Producto producto, IFormFile imagen)
         {
-            if (ModelState.IsValid)
+            
+            if (imagen != null && imagen.Length > 0)
             {
-                _context.Add(producto);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                //Con Guid.NewGuid creamos un nombre unico para la imagen, Path.GetExtension borra el nombre que contiene la imagen solo dejando el .png, .jpg etc
+                var nombreArchivo = $"{Guid.NewGuid()}{Path.GetExtension(imagen.FileName)}";
+
+                //En este apartado Path.Combine, comobina las direcciones para crear la ruta, Directory.GetCurrentDirectory es para obtener la ruta en la que nos encontramos
+                //wwwroot, imagenes y nombreArchivo es lo demas que le combinamos para que se convierta en una ruta
+                var ruta = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "imagenes", nombreArchivo);
+
+                //En pocas palabras guarda la imagen
+                await using (var stream = new FileStream(ruta, FileMode.Create))
+                    await imagen.CopyToAsync(stream);
+
+                //Guardamos la ruta en la base de datos, en la tabla productom campo ImagenUrl
+                producto.ImagenUrl = $"/imagenes/{nombreArchivo}";
             }
-            ViewData["CategoriaId"] = new SelectList(_context.Categoria, "CategoriaId", "CategoriaId", producto.CategoriaId);
-            return View(producto);
+            else
+            {
+                ModelState.AddModelError("ImagenUrl", "Debe seleccionar una imagen valida");
+                
+            }
+
+            if (!ModelState.IsValid)
+            {
+                ViewData["CategoriaId"] = new SelectList(_context.Categoria, "CategoriaId", "Nombre", producto.CategoriaId);
+                return View(producto);
+            }
+
+            //Guarda los demas datos y nos dirije al index
+            _context.Add(producto);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
+
+
+
 
         // GET: Productos/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -81,7 +112,7 @@ namespace JardinSecretoPrueba1.Controllers
             {
                 return NotFound();
             }
-            ViewData["CategoriaId"] = new SelectList(_context.Categoria, "CategoriaId", "CategoriaId", producto.CategoriaId);
+            ViewData["CategoriaId"] = new SelectList(_context.Categoria, "CategoriaId", "Nombre", producto.CategoriaId);
             return View(producto);
         }
 
@@ -90,19 +121,50 @@ namespace JardinSecretoPrueba1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProductoId,Nombre,Descripcion,Precio,Disponible,ImagenUrl,CategoriaId")] Producto producto)
+        public async Task<IActionResult> Edit(int id, [Bind("ProductoId,Nombre,Descripcion,Precio,Disponible,ImagenUrl,CategoriaId")] Producto producto, IFormFile imagen)
         {
             if (id != producto.ProductoId)
             {
                 return NotFound();
             }
+            var productoExistente = await _context.Productos.FindAsync(id);
 
+            if (productoExistente == null)
+            {
+                return NotFound();
+            }
+            //Nos aseguramos que se pueda actualizar la imagen
+            if (imagen != null && imagen.Length > 0)
+            {
+                //Con Guid.NewGuid creamos un nombre unico para la imagen, Path.GetExtension borra el nombre que contiene la imagen solo dejando el .png, .jpg etc
+                var nombreArchivo = $"{Guid.NewGuid()}{Path.GetExtension(imagen.FileName)}";
+
+                //En este apartado Path.Combine, comobina las direcciones para crear la ruta, Directory.GetCurrentDirectory es para obtener la ruta en la que nos encontramos
+                //wwwroot, imagenes y nombreArchivo es lo demas que le combinamos para que se convierta en una ruta
+                var ruta = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "imagenes", nombreArchivo);
+
+                //En pocas palabras guarda la imagen
+                await using (var stream = new FileStream(ruta, FileMode.Create))
+                    await imagen.CopyToAsync(stream);
+
+                //Guardamos la ruta en la base de datos, en la tabla productom campo ImagenUrl
+                productoExistente.ImagenUrl = $"/imagenes/{nombreArchivo}";
+            }
+
+            productoExistente.Nombre = producto.Nombre;
+            productoExistente.Descripcion = producto.Descripcion;
+            productoExistente.Precio = producto.Precio;
+            productoExistente.Disponible = producto.Disponible;
+            productoExistente.CategoriaId = producto.CategoriaId;
+
+            ModelState.Remove("Imagen");
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Update(producto);
+                    _context.Update(productoExistente);
                     await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -115,9 +177,9 @@ namespace JardinSecretoPrueba1.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                
             }
-            ViewData["CategoriaId"] = new SelectList(_context.Categoria, "CategoriaId", "CategoriaId", producto.CategoriaId);
+            ViewData["CategoriaId"] = new SelectList(_context.Categoria, "CategoriaId", "Nombre", producto.CategoriaId);
             return View(producto);
         }
 

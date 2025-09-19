@@ -20,12 +20,11 @@ public partial class Producto
 
     public bool Disponible { get; set; }
 
-    [Required]
-    [Url]
+    //[Required(ErrorMessage = "Debes colocar una imagen, obligatoriamente")]
+    //[Url]
     [StringLength(500)]
-    public string ImagenUrl { get; set; } = null!;
+    public string? ImagenUrl { get; set; }
 
-    
     public int? CategoriaId { get; set; }
 
     

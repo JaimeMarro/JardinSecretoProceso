@@ -49,17 +49,19 @@
                 @Html.DisplayFor(modelItem => item.Disponible)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ImagenUrl)
+                <img src="@item.ImagenUrl" width="100" />
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Categoria.CategoriaId)
+                @Html.DisplayFor(modelItem => item.Categoria.Nombre)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ProductoId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProductoId">Details</a> |
+                <a asp-action="Edit" asp-route-id="@item.ProductoId">Edit</a> 
+                <a asp-action="Details" asp-route-id="@item.ProductoId">Details</a> 
                 <a asp-action="Delete" asp-route-id="@item.ProductoId">Delete</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+<h6><a href="../Home/Opciones">Regresar a las opciones</a></h6>

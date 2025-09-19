@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using JardinSecretoPrueba1.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace JardinSecretoPrueba1.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CategoriasController : Controller
     {
         private readonly JardinSecretoContext _context;
@@ -22,6 +24,11 @@ namespace JardinSecretoPrueba1.Controllers
         public async Task<IActionResult> Index()
         {
             return View(await _context.Categoria.ToListAsync());
+        }
+
+        public async Task<IActionResult> ErrorDelete()
+        {
+            return View();
         }
 
         // GET: Categorias/Details/5
@@ -115,6 +122,8 @@ namespace JardinSecretoPrueba1.Controllers
             return View(categoria);
         }
 
+        
+
         // GET: Categorias/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -138,19 +147,28 @@ namespace JardinSecretoPrueba1.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var categoria = await _context.Categoria.FindAsync(id);
-            if (categoria != null)
+            try
             {
-                _context.Categoria.Remove(categoria);
-            }
+                var categoria = await _context.Categoria.FindAsync(id);
+                if (categoria != null)
+                {
+                    _context.Categoria.Remove(categoria);
+                }
 
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception)
+            {
+                return View("ErrorDelete");
+            }
         }
 
         private bool CategoriaExists(int id)
         {
             return _context.Categoria.Any(e => e.CategoriaId == id);
         }
+
+        
     }
 }

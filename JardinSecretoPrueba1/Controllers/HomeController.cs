@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using JardinSecretoPrueba1.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JardinSecretoPrueba1.Controllers
@@ -12,12 +13,10 @@ namespace JardinSecretoPrueba1.Controllers
         {
             _logger = logger;
         }
-
         public IActionResult Index()
         {
             return View();
         }
-
         public IActionResult Privacy()
         {
             return View();
@@ -28,5 +27,12 @@ namespace JardinSecretoPrueba1.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [Authorize(Roles = "Admin")]
+        public IActionResult Opciones()
+        {
+            return View();
+        }
+
     }
 }
