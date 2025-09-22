@@ -4,6 +4,10 @@
     ViewData["Title"] = "Menu";
 }
 <br />
+<li class="nav-item">
+    <a class="nav-link" asp-controller="Carrito" asp-action="Index"><h1>🛒 Carrito</h1></a>
+</li>
+<br />
 <h1>@ViewBag.Nombre</h1>
 
 <br />
@@ -28,6 +32,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Categoria)
             </th>
+            <th></th>
             <th></th>
         </tr>
     </thead>
@@ -58,9 +63,23 @@
                     <a asp-action="Details" asp-route-id="@item.ProductoId">Details</a> 
                     @* <a asp-action="Delete" asp-route-id="@item.ProductoId">Delete</a> *@
                 </td>
+                <td>
+                    <button class="btn btn-success btn-sm add-to-cart"
+                            data-id="@item.ProductoId"
+                            data-nombre="@item.Nombre"
+                            data-precio="@item.Precio">
+                        🛒 Agregar al carrito
+                    </button>
+                </td>
+
             </tr>
         }
     </tbody>
 </table>
 
 <h6><a href="../Home/Index">Salir</a></h6>
+
+@section Scripts {
+    <script src="~/js/carrito.js"></script>
+}
+

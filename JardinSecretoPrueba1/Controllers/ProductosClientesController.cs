@@ -43,5 +43,11 @@ namespace JardinSecretoPrueba1.Controllers
 
             return View(producto);
         }
+
+        //Configuracion del carrito Carrito
+        public IActionResult Carrito()
+        {
+            return View();
+        }
     }
 }

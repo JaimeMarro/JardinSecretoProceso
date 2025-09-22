@@ -16,7 +16,9 @@ wwwroot\imagenes\b8df40b0-3bd1-4229-9402-7d3930f7d3dd.jpg
 wwwroot\imagenes\bb3ce6e7-536c-4def-9ad9-84566fa9e77d.jpg
 wwwroot\imagenes\c94e39e1-ed61-4582-9aa8-166fb003201c.png
 wwwroot\imagenes\ce7d4efc-2bef-4815-a7c3-1df872de339d.png
+wwwroot\imagenes\df7829d5-0f15-442a-9767-94fed42966c2.jpg
 wwwroot\imagenes\e616b0e3-bc58-4f11-95a6-cdd20824f600.png
+wwwroot\imagenes\f04ff72a-99a5-48ec-b3db-44f364eb749a.webp
 wwwroot\imagenes\ff72589e-ad8b-4c79-8131-7cc404d55b29.jpg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
@@ -76,3 +78,4 @@ wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
+wwwroot\js\Carrito.js

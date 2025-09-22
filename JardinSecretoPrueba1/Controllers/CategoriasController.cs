@@ -26,7 +26,7 @@ namespace JardinSecretoPrueba1.Controllers
             return View(await _context.Categoria.ToListAsync());
         }
 
-        public async Task<IActionResult> ErrorDelete()
+        public IActionResult ErrorDelete()
         {
             return View();
         }
