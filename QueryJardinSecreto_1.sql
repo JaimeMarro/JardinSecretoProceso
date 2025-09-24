@@ -32,7 +32,7 @@ CREATE TABLE Producto (
 GO
 
 -- =============================================
--- OPCIONAL: TABLA DE CATEGORÍA
+-- TABLA DE CATEGORÍA
 -- =============================================
 CREATE TABLE Categoria (
     categoria_id INT IDENTITY(1,1) PRIMARY KEY,
@@ -41,6 +41,9 @@ CREATE TABLE Categoria (
 );
 GO
 
+-- =============================================
+-- TABLA DE SABORES
+-- =============================================
 CREATE TABLE Sabor(
 	Sabor_id INT PRIMARY KEY IDENTITY Not null,
 	Sabor1 nvarchar(75) Not Null,
@@ -54,6 +57,20 @@ CREATE TABLE Sabor(
 );
 GO
 
+-- =============================================
+-- TABLA DE EXTRAS
+-- =============================================
+	CREATE TABLE Extra(
+	Extra_id INT PRIMARY KEY IDENTITY Not null,
+	Extra1 nvarchar(75) Null,
+	Extra2 nvarchar(75) null,
+	Extra3 nvarchar(75) null,
+	Extra4 nvarchar(75) null,
+	Id_Producto int not null,
+
+	FOREIGN KEY (Id_Producto) REFERENCES Producto(producto_id)
+);
+GO
 
 -- Agregar FK en Producto si quieres usar categorías
 ALTER TABLE Producto
@@ -64,4 +81,5 @@ ADD categoria_id INT NULL
 GO
 
 INSERT INTO Administrador(usuario, contraseña_hash) VALUES ('admin', '$2a$11$L0My82Ma0WZSAND1VhtZC.qGGb2EzaMM/7BxadJ6j9VLxkPNpA8fa');
+
 
