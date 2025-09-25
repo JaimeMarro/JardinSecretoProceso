@@ -51,6 +51,7 @@ CREATE TABLE Sabor(
 	Sabor3 nvarchar(75) null,
 	Sabor4 nvarchar(75) null,
 	Sabor5 nvarchar(75) null,
+	Precio_Sabor double(10,2) null,
 	Id_Producto int not null,
 
 	FOREIGN KEY (Id_Producto) REFERENCES Producto(producto_id)
@@ -66,6 +67,7 @@ GO
 	Extra2 nvarchar(75) null,
 	Extra3 nvarchar(75) null,
 	Extra4 nvarchar(75) null,
+	Precio_Extra double(10,2) null,
 	Id_Producto int not null,
 
 	FOREIGN KEY (Id_Producto) REFERENCES Producto(producto_id)
@@ -81,5 +83,6 @@ ADD categoria_id INT NULL
 GO
 
 INSERT INTO Administrador(usuario, contraseña_hash) VALUES ('admin', '$2a$11$L0My82Ma0WZSAND1VhtZC.qGGb2EzaMM/7BxadJ6j9VLxkPNpA8fa');
+
 
 
