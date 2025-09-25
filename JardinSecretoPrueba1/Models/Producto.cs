@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -27,6 +27,10 @@ public partial class Producto
 
     public int? CategoriaId { get; set; }
 
-    
+
     public virtual Categoria? Categoria { get; set; }
+
+    public virtual ICollection<Extra> Extras { get; set; } = new List<Extra>();
+
+    public virtual ICollection<Sabor> Sabors { get; set; } = new List<Sabor>();
 }

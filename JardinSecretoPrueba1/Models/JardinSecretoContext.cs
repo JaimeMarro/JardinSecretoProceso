@@ -19,11 +19,15 @@ public partial class JardinSecretoContext : DbContext
 
     public virtual DbSet<Categoria> Categoria { get; set; }
 
+    public virtual DbSet<Extra> Extras { get; set; }
+
     public virtual DbSet<Producto> Productos { get; set; }
+
+    public virtual DbSet<Sabor> Sabors { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=JAIME\\MSSQLSERVER02;Database=JardinSecreto;Trusted_Connection=True;TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer("Server=JAIME\\MSSQLSERVER02;Database=JardinSecreto;Trusted_Connection=True; TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -61,6 +65,25 @@ public partial class JardinSecretoContext : DbContext
                 .HasColumnName("nombre");
         });
 
+        modelBuilder.Entity<Extra>(entity =>
+        {
+            entity.HasKey(e => e.ExtraId).HasName("PK__Extra__D482B946148A8315");
+
+            entity.ToTable("Extra");
+
+            entity.Property(e => e.ExtraId).HasColumnName("Extra_id");
+            entity.Property(e => e.Extra1).HasMaxLength(75);
+            entity.Property(e => e.Extra2).HasMaxLength(75);
+            entity.Property(e => e.Extra3).HasMaxLength(75);
+            entity.Property(e => e.Extra4).HasMaxLength(75);
+            entity.Property(e => e.IdProducto).HasColumnName("Id_Producto");
+
+            entity.HasOne(d => d.IdProductoNavigation).WithMany(p => p.Extras)
+                .HasForeignKey(d => d.IdProducto)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Extra__Id_Produc__5FB337D6");
+        });
+
         modelBuilder.Entity<Producto>(entity =>
         {
             entity.HasKey(e => e.ProductoId).HasName("PK__Producto__FB5CEEEC6A225AE7");
@@ -76,7 +99,7 @@ public partial class JardinSecretoContext : DbContext
                 .HasDefaultValue(true)
                 .HasColumnName("disponible");
             entity.Property(e => e.ImagenUrl)
-                .HasMaxLength(255)
+                .HasMaxLength(500)
                 .HasColumnName("imagen_url");
             entity.Property(e => e.Nombre)
                 .HasMaxLength(100)
@@ -88,6 +111,26 @@ public partial class JardinSecretoContext : DbContext
             entity.HasOne(d => d.Categoria).WithMany(p => p.Productos)
                 .HasForeignKey(d => d.CategoriaId)
                 .HasConstraintName("FK_Producto_Categoria");
+        });
+
+        modelBuilder.Entity<Sabor>(entity =>
+        {
+            entity.HasKey(e => e.SaborId).HasName("PK__Sabor__6C8EB13333E2B71B");
+
+            entity.ToTable("Sabor");
+
+            entity.Property(e => e.SaborId).HasColumnName("Sabor_id");
+            entity.Property(e => e.IdProducto).HasColumnName("Id_Producto");
+            entity.Property(e => e.Sabor1).HasMaxLength(75);
+            entity.Property(e => e.Sabor2).HasMaxLength(75);
+            entity.Property(e => e.Sabor3).HasMaxLength(75);
+            entity.Property(e => e.Sabor4).HasMaxLength(75);
+            entity.Property(e => e.Sabor5).HasMaxLength(75);
+
+            entity.HasOne(d => d.IdProductoNavigation).WithMany(p => p.Sabors)
+                .HasForeignKey(d => d.IdProducto)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Sabor__Id_Produc__5CD6CB2B");
         });
 
         OnModelCreatingPartial(modelBuilder);

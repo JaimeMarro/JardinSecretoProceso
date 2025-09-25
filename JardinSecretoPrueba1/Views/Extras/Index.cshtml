@@ -1,0 +1,67 @@
+﻿@model IEnumerable<JardinSecretoPrueba1.Models.Extra>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Extra1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Extra2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Extra3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Extra4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio_Extra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdProductoNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Extra1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Extra2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Extra3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Extra4)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Precio_Extra)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdProductoNavigation.Nombre)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ExtraId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ExtraId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ExtraId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<h6><a href="../Home/Opciones">Regresar a las opciones</a></h6>

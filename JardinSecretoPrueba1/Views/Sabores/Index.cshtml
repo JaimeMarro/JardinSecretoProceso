@@ -1,0 +1,73 @@
+﻿@model IEnumerable<JardinSecretoPrueba1.Models.Sabor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Sabor1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sabor2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sabor3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sabor4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sabor5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio_Sabor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdProductoNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sabor1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sabor2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sabor3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sabor4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sabor5)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Precio_Sabor)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdProductoNavigation.Nombre)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SaborId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SaborId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SaborId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<h6><a href="../Home/Opciones">Regresar a las opciones</a></h6>

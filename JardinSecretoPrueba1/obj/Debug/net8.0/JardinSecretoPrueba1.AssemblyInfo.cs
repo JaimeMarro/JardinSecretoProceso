@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JardinSecretoPrueba1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b095190a26583cef68532580dd6d5c0c9ec0ecdf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+78992948f7126c786de9db9de27de27c4343d0dc")]
 [assembly: System.Reflection.AssemblyProductAttribute("JardinSecretoPrueba1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JardinSecretoPrueba1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
