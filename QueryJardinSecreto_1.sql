@@ -1,5 +1,5 @@
 -- =============================================
--- CREACI”N DE BASE DE DATOS
+-- CREACI√ìN DE BASE DE DATOS
 -- =============================================
 CREATE DATABASE JardinSecreto;
 GO
@@ -13,7 +13,7 @@ GO
 CREATE TABLE Administrador (
     admin_id INT IDENTITY(1,1) PRIMARY KEY,
     usuario NVARCHAR(50) UNIQUE NOT NULL,
-    contraseÒa_hash NVARCHAR(255) NOT NULL,
+    contrase√±a_hash NVARCHAR(255) NOT NULL,
     fecha_creacion DATETIME DEFAULT GETDATE()
 );
 GO
@@ -32,7 +32,7 @@ CREATE TABLE Producto (
 GO
 
 -- =============================================
--- OPCIONAL: TABLA DE CATEGORÕA
+-- TABLA DE CATEGOR√çA
 -- =============================================
 CREATE TABLE Categoria (
     categoria_id INT IDENTITY(1,1) PRIMARY KEY,
@@ -41,9 +41,48 @@ CREATE TABLE Categoria (
 );
 GO
 
--- Agregar FK en Producto si quieres usar categorÌas
+-- =============================================
+-- TABLA DE SABORES
+-- =============================================
+CREATE TABLE Sabor(
+	Sabor_id INT PRIMARY KEY IDENTITY Not null,
+	Sabor1 nvarchar(75) Not Null,
+	Sabor2 nvarchar(75) null,
+	Sabor3 nvarchar(75) null,
+	Sabor4 nvarchar(75) null,
+	Sabor5 nvarchar(75) null,
+	Precio_Sabor double(10,2) null,
+	Id_Producto int not null,
+
+	FOREIGN KEY (Id_Producto) REFERENCES Producto(producto_id)
+);
+GO
+
+-- =============================================
+-- TABLA DE EXTRAS
+-- =============================================
+	CREATE TABLE Extra(
+	Extra_id INT PRIMARY KEY IDENTITY Not null,
+	Extra1 nvarchar(75) Null,
+	Extra2 nvarchar(75) null,
+	Extra3 nvarchar(75) null,
+	Extra4 nvarchar(75) null,
+	Precio_Extra double(10,2) null,
+	Id_Producto int not null,
+
+	FOREIGN KEY (Id_Producto) REFERENCES Producto(producto_id)
+);
+GO
+
+-- Agregar FK en Producto si quieres usar categor√≠as
 ALTER TABLE Producto
 ADD categoria_id INT NULL
     CONSTRAINT FK_Producto_Categoria FOREIGN KEY (categoria_id)
     REFERENCES Categoria(categoria_id);
+
 GO
+
+INSERT INTO Administrador(usuario, contrase√±a_hash) VALUES ('admin', '$2a$11$L0My82Ma0WZSAND1VhtZC.qGGb2EzaMM/7BxadJ6j9VLxkPNpA8fa');
+
+
+
