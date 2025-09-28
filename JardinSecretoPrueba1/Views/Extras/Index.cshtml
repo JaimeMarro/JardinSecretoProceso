@@ -13,19 +13,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Extra1)
+                @Html.DisplayNameFor(model => model.Nombre)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Extra2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Extra3)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Extra4)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Precio_Extra)
+                @Html.DisplayNameFor(model => model.PrecioExtra)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.IdProductoNavigation)
@@ -37,20 +28,11 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Extra1)
+                @Html.DisplayFor(modelItem => item.Nombre)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Extra2)
+                @Html.DisplayFor(modelItem => item.PrecioExtra)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Extra3)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Extra4)
-            </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Precio_Extra)
-                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.IdProductoNavigation.Nombre)
             </td>
@@ -63,5 +45,3 @@
 }
     </tbody>
 </table>
-
-<h6><a href="../Home/Opciones">Regresar a las opciones</a></h6>

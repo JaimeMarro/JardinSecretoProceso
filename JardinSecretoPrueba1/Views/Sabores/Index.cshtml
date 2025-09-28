@@ -13,22 +13,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Sabor1)
+                @Html.DisplayNameFor(model => model.Nombre)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Sabor2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Sabor3)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Sabor4)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Sabor5)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Precio_Sabor)
+                @Html.DisplayNameFor(model => model.PrecioSabor)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.IdProductoNavigation)
@@ -40,23 +28,11 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Sabor1)
+                @Html.DisplayFor(modelItem => item.Nombre)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Sabor2)
+                @Html.DisplayFor(modelItem => item.PrecioSabor)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sabor3)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sabor4)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sabor5)
-            </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Precio_Sabor)
-                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.IdProductoNavigation.Nombre)
             </td>
@@ -69,5 +45,3 @@
 }
     </tbody>
 </table>
-
-<h6><a href="../Home/Opciones">Regresar a las opciones</a></h6>

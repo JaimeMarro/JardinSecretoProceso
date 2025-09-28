@@ -2,7 +2,14 @@
 
 @{
     ViewData["Title"] = "Menu";
+    var nombreUsuario = ViewBag.Nombre ?? "Invitado";
+    var tipoPedido = ViewBag.TipoPedido ?? "No especificado";
 }
+<script>
+    var usuarioNombre = "@nombreUsuario";
+    var usuarioPedido = "@tipoPedido";
+</script>
+
 <br />
 <li class="nav-item">
     <a class="nav-link" asp-controller="Carrito" asp-action="Index"><h1>🛒 Carrito</h1></a>

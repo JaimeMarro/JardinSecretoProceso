@@ -6,11 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using JardinSecretoPrueba1.Models;
-using Microsoft.AspNetCore.Authorization;
 
 namespace JardinSecretoPrueba1.Controllers
 {
-    [Authorize(Roles = "Admin")]
     public class ExtrasController : Controller
     {
         private readonly JardinSecretoContext _context;
@@ -58,7 +56,7 @@ namespace JardinSecretoPrueba1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ExtraId,Extra1,Extra2,Extra3,Extra4,IdProducto")] Extra extra)
+        public async Task<IActionResult> Create([Bind("ExtraId,IdProducto,Nombre,PrecioExtra")] Extra extra)
         {
             if (ModelState.IsValid)
             {
@@ -92,7 +90,7 @@ namespace JardinSecretoPrueba1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ExtraId,Extra1,Extra2,Extra3,Extra4,IdProducto")] Extra extra)
+        public async Task<IActionResult> Edit(int id, [Bind("ExtraId,IdProducto,Nombre,PrecioExtra")] Extra extra)
         {
             if (id != extra.ExtraId)
             {

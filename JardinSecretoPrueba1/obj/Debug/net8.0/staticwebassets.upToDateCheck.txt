@@ -3,14 +3,15 @@ wwwroot\favicon.ico
 wwwroot\imagenes\0e8b21e3-9985-4493-85fc-72be5418504b.png
 wwwroot\imagenes\1a1d7002-95e9-4e5c-be80-ea32ed419ffb.png
 wwwroot\imagenes\206bd190-0f61-4513-a67a-52d42570e2d2.webp
-wwwroot\imagenes\3a3b078b-9b35-47da-b7d6-2be22a1e4d94.png
+wwwroot\imagenes\2a08e638-3bb2-43aa-b979-4bdcd7ac09f0.jpg
 wwwroot\imagenes\3bf7e956-6403-4bb4-bfb2-ed541b50ee0d.webp
 wwwroot\imagenes\41b49dc2-bd85-4032-89c5-7ee0b0e1063c.png
+wwwroot\imagenes\424c4db5-651d-4e9f-ad16-d7fe2cf96fee.jpg
 wwwroot\imagenes\4d23aca8-c8cd-44a1-ba5e-76a847fd039a.png
 wwwroot\imagenes\607b19c4-6c0d-4f8b-aca6-94141aa25d6f.jpg
-wwwroot\imagenes\652c91a1-376e-4b31-ab64-097ed12a31af.jpg
 wwwroot\imagenes\8a45b4b5-962f-4657-8b49-0e930ce89866.jpg
 wwwroot\imagenes\9657ae0d-c9cb-469f-a00c-45379568c44c.png
+wwwroot\imagenes\9fca17df-ad29-4fa8-b659-eb038fea5977.jpg
 wwwroot\imagenes\a2f4788d-c25d-4114-bbd1-3e0cf4692bae.jpg
 wwwroot\imagenes\afc56d79-6b78-48dc-9c73-19d32b9f02d8.webp
 wwwroot\imagenes\b41a7e64-da8c-4328-b4ad-f18fcddcdb66.png
@@ -23,7 +24,6 @@ wwwroot\imagenes\df7829d5-0f15-442a-9767-94fed42966c2.jpg
 wwwroot\imagenes\e616b0e3-bc58-4f11-95a6-cdd20824f600.png
 wwwroot\imagenes\f04ff72a-99a5-48ec-b3db-44f364eb749a.webp
 wwwroot\imagenes\ff72589e-ad8b-4c79-8131-7cc404d55b29.jpg
-wwwroot\js\Carrito.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
@@ -82,3 +82,4 @@ wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
+wwwroot\js\Carrito.js

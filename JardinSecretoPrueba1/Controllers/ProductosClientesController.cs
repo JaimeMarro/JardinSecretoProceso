@@ -8,21 +8,38 @@ namespace JardinSecretoPrueba1.Controllers
     {
         private readonly JardinSecretoContext _context;
 
-        String? nombreUsuario = null;
         public ProductosClientesController(JardinSecretoContext context)
         {
             _context = context;
         }
-        public IActionResult NombreUsuario(String nombre)
+
+        // GET: muestra el formulario
+        [HttpGet]
+        public IActionResult NombreUsuario()
         {
-            nombreUsuario = nombre;
             return View();
         }
 
-        public async Task<IActionResult> Index(String nombreUsuario)
+        // POST: recibe datos del formulario
+        [HttpPost]
+        public IActionResult NombreUsuario(string nombreusuario, string tipoPedido)
         {
-            this.nombreUsuario = nombreUsuario;
-            ViewBag.Nombre = nombreUsuario;
+            HttpContext.Session.SetString("NombreUsuario", nombreusuario);
+            HttpContext.Session.SetString("TipoPedido", tipoPedido);
+
+            return RedirectToAction("Index");
+        }
+
+
+
+        public async Task<IActionResult> Index()
+        {
+            var nombre = HttpContext.Session.GetString("NombreUsuario") ?? "Invitado";
+            var pedido = HttpContext.Session.GetString("TipoPedido") ?? "No especificado";
+
+            ViewBag.Nombre = nombre;
+            ViewBag.TipoPedido = pedido;
+
             var jardinSecretoContext = _context.Productos.Include(p => p.Categoria);
             return View(await jardinSecretoContext.ToListAsync());
         }

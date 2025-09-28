@@ -93,7 +93,7 @@ namespace JardinSecretoPrueba1.Controllers
             //Guarda los demas datos y nos dirije al index
             _context.Add(producto);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Sabores");
         }
 
 

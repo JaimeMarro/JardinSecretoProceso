@@ -6,11 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using JardinSecretoPrueba1.Models;
-using Microsoft.AspNetCore.Authorization;
 
 namespace JardinSecretoPrueba1.Controllers
 {
-    [Authorize(Roles = "Admin")]
     public class SaboresController : Controller
     {
         private readonly JardinSecretoContext _context;
@@ -58,13 +56,13 @@ namespace JardinSecretoPrueba1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("SaborId,Sabor1,Sabor2,Sabor3,Sabor4,Sabor5,IdProducto")] Sabor sabor)
+        public async Task<IActionResult> Create([Bind("SaborId,IdProducto,Nombre,PrecioSabor")] Sabor sabor)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(sabor);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Extras");
             }
             ViewData["IdProducto"] = new SelectList(_context.Productos, "ProductoId", "Nombre", sabor.IdProducto);
             return View(sabor);
@@ -92,7 +90,7 @@ namespace JardinSecretoPrueba1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("SaborId,Sabor1,Sabor2,Sabor3,Sabor4,Sabor5,IdProducto")] Sabor sabor)
+        public async Task<IActionResult> Edit(int id, [Bind("SaborId,IdProducto,Nombre,PrecioSabor")] Sabor sabor)
         {
             if (id != sabor.SaborId)
             {

@@ -13,38 +13,18 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Sabor1" class="control-label"></label>
-                <input asp-for="Sabor1" class="form-control" />
-                <span asp-validation-for="Sabor1" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Sabor2" class="control-label"></label>
-                <input asp-for="Sabor2" class="form-control" />
-                <span asp-validation-for="Sabor2" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Sabor3" class="control-label"></label>
-                <input asp-for="Sabor3" class="form-control" />
-                <span asp-validation-for="Sabor3" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Sabor4" class="control-label"></label>
-                <input asp-for="Sabor4" class="form-control" />
-                <span asp-validation-for="Sabor4" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Sabor5" class="control-label"></label>
-                <input asp-for="Sabor5" class="form-control" />
-                <span asp-validation-for="Sabor5" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Precio_Sabor" class="control-label"></label>
-                <input asp-for="Precio_Sabor" class="form-control" />
-                <span asp-validation-for="Precio_Sabor" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="IdProducto" class="control-label"></label>
                 <select asp-for="IdProducto" class ="form-control" asp-items="ViewBag.IdProducto"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrecioSabor" class="control-label"></label>
+                <input asp-for="PrecioSabor" class="form-control" />
+                <span asp-validation-for="PrecioSabor" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
