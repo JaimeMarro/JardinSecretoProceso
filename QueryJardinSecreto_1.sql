@@ -1,10 +1,10 @@
 -- =============================================
 -- CREACIÓN DE BASE DE DATOS
 -- =============================================
-CREATE DATABASE JardinSecreto;
+CREATE DATABASE JardinSecretoOficial;
 GO
 
-USE JardinSecreto;
+USE JardinSecretoOficial;
 GO
 
 -- =============================================
@@ -46,11 +46,7 @@ GO
 -- =============================================
 CREATE TABLE Sabor(
 	Sabor_id INT PRIMARY KEY IDENTITY Not null,
-	Sabor1 nvarchar(75) Not Null,
-	Sabor2 nvarchar(75) null,
-	Sabor3 nvarchar(75) null,
-	Sabor4 nvarchar(75) null,
-	Sabor5 nvarchar(75) null,
+	Nombre nvarchar(75) not null,	
 	Precio_Sabor double(10,2) null,
 	Id_Producto int not null,
 
@@ -63,10 +59,7 @@ GO
 -- =============================================
 	CREATE TABLE Extra(
 	Extra_id INT PRIMARY KEY IDENTITY Not null,
-	Extra1 nvarchar(75) Null,
-	Extra2 nvarchar(75) null,
-	Extra3 nvarchar(75) null,
-	Extra4 nvarchar(75) null,
+	Nombre nvarchar(75) not null,
 	Precio_Extra double(10,2) null,
 	Id_Producto int not null,
 
@@ -83,6 +76,7 @@ ADD categoria_id INT NULL
 GO
 
 INSERT INTO Administrador(usuario, contraseña_hash) VALUES ('admin', '$2a$11$L0My82Ma0WZSAND1VhtZC.qGGb2EzaMM/7BxadJ6j9VLxkPNpA8fa');
+
 
 
 
