@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\jojam\\source\\repos\\JardinSecretoProceso\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2DE45B9C-FB1C-47E5-B6F9-88D156B63DF5}|JardinSecretoPrueba1\\JardinSecretoPrueba1.csproj|c:\\users\\jojam\\source\\repos\\jardinsecretoproceso\\jardinsecretoprueba1\\models\\jardinsecretocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DE45B9C-FB1C-47E5-B6F9-88D156B63DF5}|JardinSecretoPrueba1\\JardinSecretoPrueba1.csproj|solutionrelative:jardinsecretoprueba1\\models\\jardinsecretocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +14,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "JardinSecretoContext.cs",
+              "DocumentMoniker": "C:\\Users\\jojam\\source\\repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\Models\\JardinSecretoContext.cs",
+              "RelativeDocumentMoniker": "JardinSecretoPrueba1\\Models\\JardinSecretoContext.cs",
+              "ToolTip": "C:\\Users\\jojam\\source\\repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\Models\\JardinSecretoContext.cs*",
+              "RelativeToolTip": "JardinSecretoPrueba1\\Models\\JardinSecretoContext.cs*",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA1wB0AAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-28T04:59:12.487Z",
+              "EditorCaption": ""
             }
           ]
         }
