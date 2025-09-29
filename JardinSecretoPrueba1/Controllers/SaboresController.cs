@@ -62,7 +62,7 @@ namespace JardinSecretoPrueba1.Controllers
             {
                 _context.Add(sabor);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index", "Extras");
+                return RedirectToAction(nameof(Index));
             }
             ViewData["IdProducto"] = new SelectList(_context.Productos, "ProductoId", "Nombre", sabor.IdProducto);
             return View(sabor);
