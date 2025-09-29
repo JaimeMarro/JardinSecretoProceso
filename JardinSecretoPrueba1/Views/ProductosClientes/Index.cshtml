@@ -1,0 +1,92 @@
+﻿@model IEnumerable<JardinSecretoPrueba1.Models.Producto>
+
+@{
+    ViewData["Title"] = "Menu";
+    var nombreUsuario = ViewBag.Nombre ?? "Invitado";
+    var tipoPedido = ViewBag.TipoPedido ?? "No especificado";
+}
+<script>
+    var usuarioNombre = "@nombreUsuario";
+    var usuarioPedido = "@tipoPedido";
+</script>
+
+<br />
+<li class="nav-item">
+    <a class="nav-link" asp-controller="Carrito" asp-action="Index"><h1>🛒 Carrito</h1></a>
+</li>
+<br />
+<h1>@ViewBag.Nombre</h1>
+
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            @* <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th> *@
+            <th>
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Disponible)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagenUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categoria)
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                @* <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td> *@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Precio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Disponible)
+                </td>
+                <td>
+                    <img src="@item.ImagenUrl" width="100" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categoria.Nombre)
+                </td>
+                <td>
+                    @* <a asp-action="Edit" asp-route-id="@item.ProductoId">Edit</a> | *@
+                    <a asp-action="Details" asp-route-id="@item.ProductoId">Details</a> 
+                    @* <a asp-action="Delete" asp-route-id="@item.ProductoId">Delete</a> *@
+                </td>
+                <td>
+                    <button class="btn btn-success btn-sm add-to-cart"
+                            data-id="@item.ProductoId"
+                            data-nombre="@item.Nombre"
+                            data-precio="@item.Precio">
+                        🛒 Agregar al carrito
+                    </button>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h6><a href="../Home/Index">Salir</a></h6>
+
+@section Scripts {
+    <script src="~/js/carrito.js"></script>
+}
+
