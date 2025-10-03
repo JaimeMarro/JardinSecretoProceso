@@ -1,4 +1,4 @@
-a-- =============================================
+-- =============================================
 -- CREACIÓN DE BASE DE DATOS
 -- =============================================
 CREATE DATABASE JardinSecretoOficial;
@@ -76,6 +76,7 @@ ADD categoria_id INT NULL
 GO
 
 INSERT INTO Administrador(usuario, contraseña_hash) VALUES ('admin', '$2a$11$L0My82Ma0WZSAND1VhtZC.qGGb2EzaMM/7BxadJ6j9VLxkPNpA8fa');
+
 
 
 
