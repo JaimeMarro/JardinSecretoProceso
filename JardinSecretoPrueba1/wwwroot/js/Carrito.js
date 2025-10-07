@@ -87,6 +87,12 @@
     // Escuchar clicks en botones "Agregar al carrito" (vista ProductosClientes/Index)
     document.body.addEventListener("click", (e) => {
         if (e.target.classList.contains("add-to-cart")) {
+            const disponible = e.target.dataset.disponible === "True";
+
+            if (!disponible) {
+                alert("Este producto no esta disponible en este momento");
+                return;
+            }
             const id = e.target.dataset.id;
             const nombre = e.target.dataset.nombre;
             const precio = parseFloat(e.target.dataset.precio);
@@ -143,7 +149,7 @@
             const total = carrito.reduce((s, it) => s + it.precio * it.cantidad, 0);
             mensaje += `Total: $${total.toFixed(2)}`;
 
-            const telefono = "70857606" // tu número de WhatsApp
+            const telefono = "########" // tu número de WhatsApp
             window.open(`https://wa.me/${telefono}?text=${mensaje}`, "_blank");
         });
 

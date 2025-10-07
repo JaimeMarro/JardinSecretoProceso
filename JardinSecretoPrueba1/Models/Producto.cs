@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace JardinSecretoPrueba1.Models;
 
@@ -32,5 +33,9 @@ public partial class Producto
 
     public virtual ICollection<Extra> Extras { get; set; } = new List<Extra>();
 
-    public virtual ICollection<Sabor> Sabors { get; set; } = new List<Sabor>();
+    public virtual ICollection<Sabor> Sabores { get; set; } = new List<Sabor>();
+
+    // 🔹 Nueva propiedad para el carrito
+    [NotMapped] // Esto evita que EF intente mapearlo a la base de datos
+    public int Cantidad { get; set; } = 0;
 }

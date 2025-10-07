@@ -1,34 +1,44 @@
-﻿@{
-    ViewData["Title"] = "Carrito";
+﻿@model List<JardinSecretoPrueba1.Models.Producto>
+@{
+    ViewData["Title"] = "Carrito de compras";
 }
 
-<h1>🛒 Carrito</h1>
+<h2 class="text-success mb-4">Carrito de compras</h2>
 
-<!-- 👇 Añade esto -->
-<span id="cliente-nombre" data-nombre="@ViewBag.Nombre" hidden></span>
-<span id="cliente-pedido" data-tipo="@ViewBag.TipoPedido" hidden></span>
-<!-- 👆 -->
+@if (!Model.Any())
+{
+    <p>Tu carrito está vacío.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Total</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Nombre</td>
+                    <td>$@item.Precio</td>
+                    <td>@item.Cantidad</td>
+                    <td>$@(item.Precio* item.Cantidad)</td>
+                    <td>
+                        <a class="btn btn-danger btn-sm" asp-action="Quitar" asp-route-id="@item.ProductoId">Quitar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 
-<table id="tabla-carrito" class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>Producto</th>
-            <th>Precio</th>
-            <th>Cantidad</th>
-            <th>Subtotal</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody></tbody>
-</table>
-
-<h3>Total: $<span id="total">0.00</span></h3>
-
-<div class="mt-3">
-    <button id="vaciar" class="btn btn-danger">Vaciar carrito</button>
-    <button id="enviar" class="btn btn-success">Enviar por WhatsApp</button>
-</div>
-
-@section Scripts {
-    <script src="~/js/carrito.js"></script>
+    <div class="d-flex justify-content-between mt-3">
+        <a class="btn btn-warning" asp-action="Vaciar">Vaciar carrito</a>
+        <a class="btn btn-success" asp-action="EnviarPedidoWhatsApp">Enviar pedido por WhatsApp</a>
+    </div>
 }

@@ -27,7 +27,7 @@ public partial class JardinSecretoContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=JAIME\\MSSQLSERVER02;Database=JardinSecretoOficial;Trusted_Connection=True;TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer("Server=JAIME\\MSSQLSERVER02;Database=JardinSecreto;Trusted_Connection=True;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -126,7 +126,7 @@ public partial class JardinSecretoContext : DbContext
                 .HasColumnType("decimal(10, 2)")
                 .HasColumnName("Precio_Sabor");
 
-            entity.HasOne(d => d.IdProductoNavigation).WithMany(p => p.Sabors)
+            entity.HasOne(d => d.IdProductoNavigation).WithMany(p => p.Sabores)
                 .HasForeignKey(d => d.IdProducto)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Sabor__Id_Produc__7B5B524B");

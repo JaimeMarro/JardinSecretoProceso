@@ -1,17 +1,48 @@
 ﻿@{
-    ViewData["Title"] = "Menu de opciones";
+    ViewData["Title"] = "Panel de Opciones";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<br />
-<div>
-    <center>
-    <h2>Escoja el que es lo que quiere elegir
-        <br /><br />
-        <a href="../Categorias/Index">Categorias</a>
-        <a href="../Productos/Index">Productos</a>
-            <a href="../Sabores/Index">Tipos de sabores</a>
-            <a href="../Extras/Index">Extras</a>
-    </h2>
-    </center>
-    <br /> <br />
-    <h6><a href="../Home/Index">Ir al inicio</a></h6>
+
+<div class="text-center">
+    <h1 class="display-5 text-success fw-bold mt-4">Panel de Administración 🌿</h1>
+    <p class="text-muted mb-5">Gestiona categorías, productos, sabores y extras del restaurante.</p>
+
+    <div class="row justify-content-center g-4">
+        <div class="col-md-3">
+            <div class="card shadow-sm border-success h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-list fa-3x text-success mb-3"></i>
+                    <h5 class="card-title fw-bold">Categorías</h5>
+                    <a class="btn btn-success w-100" asp-controller="Categorias" asp-action="Index">Ir a Categorías</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow-sm border-success h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-utensils fa-3x text-success mb-3"></i>
+                    <h5 class="card-title fw-bold">Productos</h5>
+                    <a class="btn btn-success w-100" asp-controller="Productos" asp-action="Index">Ir a Productos</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow-sm border-success h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-ice-cream fa-3x text-success mb-3"></i>
+                    <h5 class="card-title fw-bold">Tipos de Sabores</h5>
+                    <a class="btn btn-success w-100" asp-controller="Sabores" asp-action="Index">Ir a Sabores</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow-sm border-success h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-plus-circle fa-3x text-success mb-3"></i>
+                    <h5 class="card-title fw-bold">Extras</h5>
+                    <a class="btn btn-success w-100" asp-controller="Extras" asp-action="Index">Ir a Extras</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

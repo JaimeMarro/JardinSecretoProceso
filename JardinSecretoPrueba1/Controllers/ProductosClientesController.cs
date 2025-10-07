@@ -66,5 +66,24 @@ namespace JardinSecretoPrueba1.Controllers
         {
             return View();
         }
+
+        // GET: Devuelve sabores y extras para llenar el modal
+        [HttpGet]
+        public async Task<IActionResult> GetOpciones(int id)
+        {
+            var sabores = await _context.Sabors
+                .Where(s => s.IdProducto == id)
+                .ToListAsync();
+
+            var extras = await _context.Extras
+                .Where(e => e.IdProducto == id)
+                .ToListAsync();
+
+            return Json(new { sabores, extras });
+        }
+
+
+
+
     }
 }

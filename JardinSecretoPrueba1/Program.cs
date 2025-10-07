@@ -8,7 +8,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDistributedMemoryCache();
-builder.Services.AddSession();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromHours(1); // tiempo de vida de la sesión
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
+// ?? HttpContextAccessor
+builder.Services.AddHttpContextAccessor();
+
 //Conexion a la base de datos
 builder.Services.AddDbContext<JardinSecretoContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ConexionBD")));
 

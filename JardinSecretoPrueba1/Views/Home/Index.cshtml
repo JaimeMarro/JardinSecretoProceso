@@ -1,16 +1,25 @@
-﻿
-@{
-    ViewData["Title"] = "Home Page";
+﻿@{
+    ViewData["Title"] = "Inicio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="text-center">
-    <br /><br />
-    <h2>
-    <a href="../Auth/Login">Login</a>
-    </h2>
+<div class="text-center mt-5">
+    <h1 class="display-4 text-success fw-bold">🌿 Bienvenido a Jardín Secreto</h1>
+    <p class="lead text-muted mb-5">Tu restaurante en línea - pide tus platillos favoritos de manera rápida y sencilla</p>
 
-    <h2>
-        <a href="../ProductosClientes/NombreUsuario">Ver menu</a>   
-    </h2>
+    <div class="row justify-content-center g-4">
+        <!-- Botón Admin -->
+        <div class="col-md-3">
+            <a class="btn btn-success btn-lg w-100 shadow" asp-controller="Auth" asp-action="Login">
+                <i class="fas fa-user-lock me-2"></i> Iniciar sesión Admin
+            </a>
+        </div>
+
+        <!-- Botón Cliente -->
+        <div class="col-md-3">
+            <a class="btn btn-outline-success btn-lg w-100 shadow" asp-controller="ProductosClientes" asp-action="NombreUsuario">
+                <i class="fas fa-utensils me-2"></i> Ver Menú Cliente
+            </a>
+        </div>
+    </div>
 </div>
-    
