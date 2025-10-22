@@ -1,0 +1,97 @@
+﻿@{
+    ViewData["Title"] = "Datos del Cliente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h3 class="card-title text-center text-success mb-4">¡Bienvenido! 🌿</h3>
+                <p class="text-center text-muted mb-4">Ingrese sus datos para continuar</p>
+
+                <!-- Formulario -->
+                <form asp-action="NombreUsuario" method="post">
+
+                    <!-- Nombre -->
+                    <div class="mb-3">
+                        <label for="nombreUsuario" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario" required />
+                    </div>
+
+                    <!-- Apellido -->
+                    <div class="mb-3">
+                        <label for="apellidoUsuario" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="apellidoUsuario" name="apellidoUsuario" required />
+                    </div>
+
+                    <!-- Teléfono -->
+                    <div class="mb-3">
+                        <label for="telefonoUsuario" class="form-label">Teléfono</label>
+                        <input type="tel" class="form-control" id="telefonoUsuario" name="telefonoUsuario"
+                               pattern="[0-9]{8}" maxlength="8" placeholder="Ejemplo: 77778888" required />
+                    </div>
+
+                    <!-- Tipo de pedido -->
+                    <div class="mb-3">
+                        <label class="form-label">Tipo de pedido</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="tipoPedido" id="delivery" value="Delivery" required />
+                            <label class="form-check-label" for="delivery">Delivery</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="tipoPedido" id="recoger" value="Pasar a recoger" />
+                            <label class="form-check-label" for="recoger">Pasar a recoger</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="tipoPedido" id="comer" value="Comer en restaurante" />
+                            <label class="form-check-label" for="comer">Comer en restaurante</label>
+                        </div>
+                    </div>
+
+                    <!-- Dirección (solo visible si elige Delivery) -->
+                    <div class="mb-3" id="direccionContainer" style="display: none;">
+                        <label for="direccionUsuario" class="form-label">Dirección de entrega</label>
+                        <textarea class="form-control" id="direccionUsuario" name="direccionUsuario" rows="3"
+                                  placeholder="Ejemplo: Calle Los Laureles #12, Col. San Benito"></textarea>
+                    </div>
+                    <!-- Hora (solo para recoger o comer en restaurante) -->
+                    <div class="mb-3" id="horaContainer" style="display:none;">
+                        <label for="horaPedido" class="form-label">Hora</label>
+                        <input type="time" class="form-control" id="horaPedido" name="horaPedido" />
+                    </div>
+
+                    <!-- Botón -->
+                    <button type="submit" class="btn btn-success w-100">Continuar</button>
+                </form>
+
+                <div class="text-center mt-3">
+                    <a asp-controller="Home" asp-action="Index">Volver al inicio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Script para mostrar/ocultar dirección -->
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tipoPedidoRadios = document.querySelectorAll('input[name="tipoPedido"]');
+            const direccionContainer = document.getElementById("direccionContainer");
+            const horaContainer = document.getElementById("horaContainer");
+
+            tipoPedidoRadios.forEach(radio => {
+                radio.addEventListener("change", () => {
+                    if (radio.value === "Delivery") {
+                        direccionContainer.style.display = "block";
+                        horaContainer.style.display = "none";
+                    } else {
+                        direccionContainer.style.display = "none";
+                        horaContainer.style.display = "block";
+                    }
+                });
+            });
+        });
+    </script>
+}
