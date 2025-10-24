@@ -23,16 +23,19 @@ namespace JardinSecretoPrueba1.Controllers
         }
 
         // Quitar producto del carrito
-        public IActionResult Quitar(int id)
+        public IActionResult Quitar(Guid id)
         {
             var carrito = ObtenerCarrito();
-            var producto = carrito.FirstOrDefault(p => p.ProductoId == id);
-            if (producto != null)
+
+            // Busca usando el nuevo CartItemId
+            var itemEnCarrito = carrito.FirstOrDefault(p => p.CartItemId == id);
+            if (itemEnCarrito != null)
             {
-                carrito.Remove(producto);
+                carrito.Remove(itemEnCarrito);
                 GuardarCarrito(carrito);
             }
             return RedirectToAction("Index");
+
         }
 
         // Vaciar carrito
@@ -72,8 +75,6 @@ namespace JardinSecretoPrueba1.Controllers
             sb.AppendLine(new string('-', 30));
             sb.AppendLine("Pedido:");
 
-            // ... (código anterior del método) ...
-
             decimal total = 0m;
 
             // Recorremos el carrito. 'p' es un objeto de tipo "CarritoItem".
@@ -97,7 +98,7 @@ namespace JardinSecretoPrueba1.Controllers
                 if (p.Extras != null && p.Extras.Any())
                 {
                     // Unimos los nombres de los extras con comas
-                    var nombresExtras = string.Join(", ", p.Extras.Select(e => e.Nombre));
+                    var nombresExtras = string.Join(", ", p.Extras.Select(e => $"{e.Nombre} (+${e.Precio.ToString("0.00")})"));
                     sb.AppendLine($"    Extras: {nombresExtras}"); // Ej: Extras: Salsita, Queso
                 }
 
@@ -122,42 +123,43 @@ namespace JardinSecretoPrueba1.Controllers
         }
 
         // Sumar una unidad de un producto existente
-        public IActionResult Sumar(int id)
+        public IActionResult Sumar(Guid id)
         {
             var carrito = ObtenerCarrito();
 
-            var producto = carrito.FirstOrDefault(p => p.ProductoId == id);
-            if (producto != null)
+            // Busca usando el nuevo CartItemId
+            var itemEnCarrito = carrito.FirstOrDefault(p => p.CartItemId == id);
+            if (itemEnCarrito != null)
             {
-                producto.Cantidad += 1; // aumenta una unidad
+                itemEnCarrito.Cantidad += 1;
                 GuardarCarrito(carrito);
             }
-
             return RedirectToAction("Index");
         }
 
         // Restar una unidad de un producto existente
-        public IActionResult Restar(int id)
+        public IActionResult Restar(Guid id)
         {
             var carrito = ObtenerCarrito();
 
-            var producto = carrito.FirstOrDefault(p => p.ProductoId == id);
-            if (producto != null)
+            // Busca usando el nuevo CartItemId
+            var itemEnCarrito = carrito.FirstOrDefault(p => p.CartItemId == id);
+            if (itemEnCarrito != null)
             {
-                if (producto.Cantidad > 1)
+                if (itemEnCarrito.Cantidad > 1)
                 {
-                    producto.Cantidad -= 1; // resta una unidad
+                    itemEnCarrito.Cantidad -= 1; // resta una unidad
                 }
                 else
                 {
                     // Si llega a 0, se elimina del carrito
-                    carrito.Remove(producto);
+                    carrito.Remove(itemEnCarrito);
                 }
-
                 GuardarCarrito(carrito);
             }
 
             return RedirectToAction("Index");
+            
         }
 
 

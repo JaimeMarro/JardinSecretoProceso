@@ -33,21 +33,20 @@ else
                             <br>
                             @if (item.Extras != null && item.Extras.Any())
                             {
-                                <br>
-                                <span>Extras: @string.Join(", ", item.Extras.Select(e => e.Nombre))</span>
+                                <span>Extras: @string.Join(", ", item.Extras.Select(e => $"{e.Nombre} (+${e.Precio.ToString("0.00")})"))</span>
                             }
                         </small>
                     </td>
                     <td>$@item.Precio</td>
                     <td>
-                        <a asp-action="Restar" asp-route-id="@item.ProductoId" class="btn btn-sm btn-warning">−</a>
+                        <a asp-action="Restar" asp-route-id="@item.CartItemId" class="btn btn-sm btn-warning">−</a>
                         <span class="mx-2">@item.Cantidad</span>
-                        <a asp-action="Sumar" asp-route-id="@item.ProductoId" class="btn btn-sm btn-success">+</a>
+                        <a asp-action="Sumar" asp-route-id="@item.CartItemId" class="btn btn-sm btn-success">+</a>
                     </td>
 
                     <td>$@item.Subtotal</td>
                     <td>
-                        <a class="btn btn-danger btn-sm" asp-action="Quitar" asp-route-id="@item.ProductoId">Quitar</a>
+                        <a class="btn btn-danger btn-sm" asp-action="Quitar" asp-route-id="@item.CartItemId">Quitar</a>
                     </td>
                 </tr>
             }

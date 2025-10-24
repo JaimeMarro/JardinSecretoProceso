@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GZPVOYLBekc=",
+  "dgSpecHash": "sQ3iEBikczU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\jojam\\source\\repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\JardinSecretoPrueba1.csproj",
+  "projectFilePath": "C:\\Users\\jojam\\source\\repos\\JardinSecretoProceso_GitHub\\JardinSecretoPrueba1\\JardinSecretoPrueba1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jojam\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\jojam\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

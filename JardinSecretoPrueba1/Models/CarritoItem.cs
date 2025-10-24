@@ -3,6 +3,8 @@ namespace JardinSecretoPrueba1.Models
 {
     public class CarritoItem
     {
+        //Identificador unico para item carrito
+        public Guid CartItemId { get; set; } = Guid.NewGuid(); //Se genera automaticamente
         public int ProductoId { get; set; }
         public string Nombre { get; set; } = "";
         public decimal Precio { get; set; }
