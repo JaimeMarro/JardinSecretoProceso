@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Login Admin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-4">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h3 class="card-title text-center text-success mb-4">Iniciar Sesión Admin 🌿</h3>
+
+                @if (ViewBag.Error != null)
+                {
+                    <div class="alert alert-danger">@ViewBag.Error</div>
+                }
+
+                <form method="post" asp-action="Login" asp-controller="Auth">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Usuario</label>
+                        <input type="text" class="form-control" id="username" name="username" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="password" name="password" required />
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">Ingresar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

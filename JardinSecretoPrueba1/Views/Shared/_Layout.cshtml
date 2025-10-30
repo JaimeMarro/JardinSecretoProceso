@@ -1,0 +1,155 @@
+﻿@using Newtonsoft.Json
+@using JardinSecretoPrueba1.Models
+@inject IHttpContextAccessor HttpContextAccessor
+
+@functions{
+    //Funcion para obtener el estado del restaurante
+
+    public static (string Estado, string ColorClass) ObtenerEstadoRestaurante()
+    {
+        try
+        {
+            var timeZoneId = "Central America Standard Time";
+            var elSalvadorTimeZone = TimeZoneInfo.FindSystemTimeZoneById(timeZoneId);
+            var nowElSalvador = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, elSalvadorTimeZone);
+
+            var day = nowElSalvador.DayOfWeek;
+            var hour = nowElSalvador.Hour; //Formato 0-23
+
+            //Cerrado todo el miercoles
+            if(day == DayOfWeek.Wednesday)
+            {
+                return ("Cerrado", "text-danger"); //Clase css roja
+            }
+
+            //Horrario: 4 PM (16:00) hasta las 2 AM (1:59) del dia siguiente
+            bool isOpen = (hour >= 16) || (hour < 2);
+
+            if(isOpen)
+            {
+                return ("Abierto", "text-success"); //Clase css verde
+            }
+            else
+            {
+                return ("Cerrado", "text-danger"); //Clase css roja
+            }
+
+        }
+        catch (TimeZoneNotFoundException ex)
+        {
+            // Error específico si la zona horaria no se encuentra en el servidor
+            Console.Error.WriteLine($"Error crítico: Zona horaria '{ex.Message}' no encontrada en el servidor.");
+            // Podrías devolver un estado especial o lanzar una excepción si prefieres
+            return ("Error Horario", "text-warning"); // Amarillo para indicar un problema
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine($"Error al obtener estado del restaurante: {ex.Message}");
+            return ("Cerrado", "text-danger"); // Por seguridad, muestra cerrado
+    
+        }
+    }
+}
+
+@{
+    Layout = null;
+
+    List<CarritoItem> carrito = new List<CarritoItem>();
+    int carritoCantidad = 0;
+
+    // Acceso a sesión de forma segura
+    var context = HttpContextAccessor.HttpContext;
+    if (context != null && context.Session != null)
+    {
+        var carritoJson = context.Session.GetString("Carrito");
+        if (!string.IsNullOrEmpty(carritoJson))
+        {
+            carrito = JsonConvert.DeserializeObject<List<CarritoItem>>(carritoJson) ?? new List<CarritoItem>();
+            carritoCantidad = carrito.Sum(item => item.Cantidad); // Suma las cantidades de todos los items
+        }
+    }
+}
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Jardín Secreto</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-success" asp-controller="Home" asp-action="Index">🌿 Jardín Secreto</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="Index">Inicio</a>
+                    </li>
+
+                    @if (User?.Identity?.IsAuthenticated == true && User.IsInRole("Admin"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Opciones">Panel Admin</a>
+                        </li>
+                        <li class="nav-item">
+                            <form method="post" asp-controller="Auth" asp-action="Logout" class="d-inline">
+                                <button type="submit" class="btn btn-outline-danger btn-sm ms-2">Cerrar Sesión</button>
+                            </form>
+                        </li>
+                    }
+
+                    <!-- Carrito -->
+                    <li class="nav-item ms-3">
+                        <a class="btn btn-light position-relative" asp-controller="Carrito" asp-action="Index">
+                            <i class="fas fa-shopping-cart"></i> Carrito
+                            @if (carritoCantidad > 0)
+                            {
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    @carritoCantidad
+                                </span>
+                            }
+                        </a>
+                    </li>
+
+                    @{
+                        var estadoInfo = ObtenerEstadoRestaurante();
+                    }
+                    <li class="nav-item ms-2 d-flex align-items-center">
+                        <span class="badge rounded-pill bg-light @estadoInfo.ColorClass border border-secondary" style="font-size: 0.9em; padding: 0.4em 0.7em;">
+                            <i class="fas fa-store me-1"></i>
+                            @estadoInfo.Estado <!-- Muestra "Abierto" o "Cerrado" -->
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        @RenderBody()
+    </div>
+
+    <footer class="bg-light text-center py-3 border-top">
+        <div class="container">
+            <small class="text-muted">© 2025 🌿 Jardín Secreto - Todos los derechos reservados</small>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+

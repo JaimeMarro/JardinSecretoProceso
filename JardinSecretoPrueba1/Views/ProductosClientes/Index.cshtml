@@ -1,0 +1,84 @@
+﻿    @model IEnumerable<JardinSecretoPrueba1.Models.Producto>
+    @{
+        ViewData["Title"] = "Menú Cliente";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+        var nombreUsuario = ViewBag.Nombre ?? "Invitado";
+        var tipoPedido = ViewBag.TipoPedido ?? "No especificado";
+    }
+
+
+    <h2 class="text-success mb-4">Hola, @ViewBag.Nombre! 🍽️</h2>
+    <p>Tipo de pedido: <strong>@ViewBag.TipoPedido</strong></p>
+
+    @if (ViewBag.TipoPedido == "Delivery")
+    {
+        <p>Dirección de entrega: <strong>@ViewBag.Direccion</strong></p>
+    }
+    else if (!string.IsNullOrEmpty(ViewBag.HoraPedido))
+    {
+        <p>Hora del pedido: <strong>@ViewBag.HoraPedido</strong></p>
+    }
+
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm h-100">
+                    <img src="@item.ImagenUrl" class="card-img-top" alt="@item.Nombre">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Nombre</h5>
+                        <p class="card-text">$@item.Precio</p>
+
+                        <!-- Botón agregar al carrito -->
+                        <a href="#" data-id="@item.ProductoId"
+                           class="btn btn-success w-100 btn-agregar-modal">
+                            <i class="fa fa-cart-plus"></i> Agregar al carrito
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Modal Seleccionar Sabor y Extras -->
+    <div class="modal fade" id="modalOpcionesProducto" tabindex="-1" aria-labelledby="modalOpcionesLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="modalOpcionesLabel">Personaliza tu producto</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+
+                <div class="modal-body">
+                    <!-- Nombre del producto -->
+                    <h5 id="modalNombreProducto" class="text-center mb-3 text-success"></h5>
+
+                    <!-- Sabor (radio buttons) -->
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">🍦 Sabor:</label>
+                        <div id="opcionesSabor">
+                            <!-- Aquí se cargarán dinámicamente los sabores -->
+                            <p class="text-muted small">Cargando sabores...</p>
+                        </div>
+                    </div>
+
+                    <!-- Extras (select múltiple) -->
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">🍫 Extras (máx. 2):</label>
+                        <div id="opcionesExtras" class="form-control" style="height: 100px; overflow-y: auto; border: 1px solid #ced4da; padding: .375rem .75rem;">
+                            <p class="text-muted small">Cargando extras...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" id="btnAgregarAlCarrito" class="btn btn-success">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/js/modalOpciones.js"></script>
