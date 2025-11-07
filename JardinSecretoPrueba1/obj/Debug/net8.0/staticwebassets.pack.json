@@ -1,0 +1,433 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\JardinSecretoPrueba1.bundle.scp.css",
+      "PackagePath": "staticwebassets\\JardinSecretoPrueba1.e3dn4sera9.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\0e8b21e3-9985-4493-85fc-72be5418504b.png",
+      "PackagePath": "staticwebassets\\imagenes\\0e8b21e3-9985-4493-85fc-72be5418504b.png"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\158aef56-7bdb-4142-b235-c4e689cec25e.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\158aef56-7bdb-4142-b235-c4e689cec25e.jpg"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\1a1d7002-95e9-4e5c-be80-ea32ed419ffb.png",
+      "PackagePath": "staticwebassets\\imagenes\\1a1d7002-95e9-4e5c-be80-ea32ed419ffb.png"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\1a8915b4-6e89-4a4e-9af2-2d45eacb091b.png",
+      "PackagePath": "staticwebassets\\imagenes\\1a8915b4-6e89-4a4e-9af2-2d45eacb091b.png"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\1e427ebe-fc38-4594-b576-f4347a2695e7.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\1e427ebe-fc38-4594-b576-f4347a2695e7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\1e8e2ac2-2d59-4776-919a-4d87b5829d80.png",
+      "PackagePath": "staticwebassets\\imagenes\\1e8e2ac2-2d59-4776-919a-4d87b5829d80.png"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\206bd190-0f61-4513-a67a-52d42570e2d2.webp",
+      "PackagePath": "staticwebassets\\imagenes\\206bd190-0f61-4513-a67a-52d42570e2d2.webp"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\2a08e638-3bb2-43aa-b979-4bdcd7ac09f0.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\2a08e638-3bb2-43aa-b979-4bdcd7ac09f0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\2a46bdb5-fe2a-426b-9252-5c9eb48f9f8c.png",
+      "PackagePath": "staticwebassets\\imagenes\\2a46bdb5-fe2a-426b-9252-5c9eb48f9f8c.png"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\3bf7e956-6403-4bb4-bfb2-ed541b50ee0d.webp",
+      "PackagePath": "staticwebassets\\imagenes\\3bf7e956-6403-4bb4-bfb2-ed541b50ee0d.webp"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\41b49dc2-bd85-4032-89c5-7ee0b0e1063c.png",
+      "PackagePath": "staticwebassets\\imagenes\\41b49dc2-bd85-4032-89c5-7ee0b0e1063c.png"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\424c4db5-651d-4e9f-ad16-d7fe2cf96fee.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\424c4db5-651d-4e9f-ad16-d7fe2cf96fee.jpg"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\4d23aca8-c8cd-44a1-ba5e-76a847fd039a.png",
+      "PackagePath": "staticwebassets\\imagenes\\4d23aca8-c8cd-44a1-ba5e-76a847fd039a.png"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\53905298-c5fd-4ac0-a002-cc6e920e7c11.webp",
+      "PackagePath": "staticwebassets\\imagenes\\53905298-c5fd-4ac0-a002-cc6e920e7c11.webp"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\54b1441d-75e5-473b-9912-b8a63d5cfd2f.png",
+      "PackagePath": "staticwebassets\\imagenes\\54b1441d-75e5-473b-9912-b8a63d5cfd2f.png"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\56fafc33-a1f7-4f41-98d8-e88d2574888e.png",
+      "PackagePath": "staticwebassets\\imagenes\\56fafc33-a1f7-4f41-98d8-e88d2574888e.png"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\607b19c4-6c0d-4f8b-aca6-94141aa25d6f.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\607b19c4-6c0d-4f8b-aca6-94141aa25d6f.jpg"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\62889985-e5f6-4f3b-bd57-b91312b2fdc2.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\62889985-e5f6-4f3b-bd57-b91312b2fdc2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\6fc6491c-8e23-42b1-9297-829412bd12ea.webp",
+      "PackagePath": "staticwebassets\\imagenes\\6fc6491c-8e23-42b1-9297-829412bd12ea.webp"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\79c44b4c-f6df-4d79-adb8-370ae28bb9f2.webp",
+      "PackagePath": "staticwebassets\\imagenes\\79c44b4c-f6df-4d79-adb8-370ae28bb9f2.webp"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\83432695-0ac0-4deb-83bb-ad8e1d7a083d.jpeg",
+      "PackagePath": "staticwebassets\\imagenes\\83432695-0ac0-4deb-83bb-ad8e1d7a083d.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\8a45b4b5-962f-4657-8b49-0e930ce89866.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\8a45b4b5-962f-4657-8b49-0e930ce89866.jpg"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\9657ae0d-c9cb-469f-a00c-45379568c44c.png",
+      "PackagePath": "staticwebassets\\imagenes\\9657ae0d-c9cb-469f-a00c-45379568c44c.png"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\9fca17df-ad29-4fa8-b659-eb038fea5977.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\9fca17df-ad29-4fa8-b659-eb038fea5977.jpg"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\a2f4788d-c25d-4114-bbd1-3e0cf4692bae.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\a2f4788d-c25d-4114-bbd1-3e0cf4692bae.jpg"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\afc56d79-6b78-48dc-9c73-19d32b9f02d8.webp",
+      "PackagePath": "staticwebassets\\imagenes\\afc56d79-6b78-48dc-9c73-19d32b9f02d8.webp"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\b41a7e64-da8c-4328-b4ad-f18fcddcdb66.png",
+      "PackagePath": "staticwebassets\\imagenes\\b41a7e64-da8c-4328-b4ad-f18fcddcdb66.png"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\b6d1256d-90cd-4753-9438-e65d879c58e9.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\b6d1256d-90cd-4753-9438-e65d879c58e9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\b8df40b0-3bd1-4229-9402-7d3930f7d3dd.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\b8df40b0-3bd1-4229-9402-7d3930f7d3dd.jpg"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\baf73c6c-37a3-4403-93ef-7541f72caeab.png",
+      "PackagePath": "staticwebassets\\imagenes\\baf73c6c-37a3-4403-93ef-7541f72caeab.png"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\bb3ce6e7-536c-4def-9ad9-84566fa9e77d.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\bb3ce6e7-536c-4def-9ad9-84566fa9e77d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\c94e39e1-ed61-4582-9aa8-166fb003201c.png",
+      "PackagePath": "staticwebassets\\imagenes\\c94e39e1-ed61-4582-9aa8-166fb003201c.png"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\ce7d4efc-2bef-4815-a7c3-1df872de339d.png",
+      "PackagePath": "staticwebassets\\imagenes\\ce7d4efc-2bef-4815-a7c3-1df872de339d.png"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\d52ff644-b498-4032-9858-54268bf97338.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\d52ff644-b498-4032-9858-54268bf97338.jpg"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\d8c46829-8801-4b91-ac69-f6e46546451e.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\d8c46829-8801-4b91-ac69-f6e46546451e.jpg"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\df7829d5-0f15-442a-9767-94fed42966c2.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\df7829d5-0f15-442a-9767-94fed42966c2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\e616b0e3-bc58-4f11-95a6-cdd20824f600.png",
+      "PackagePath": "staticwebassets\\imagenes\\e616b0e3-bc58-4f11-95a6-cdd20824f600.png"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\f04ff72a-99a5-48ec-b3db-44f364eb749a.webp",
+      "PackagePath": "staticwebassets\\imagenes\\f04ff72a-99a5-48ec-b3db-44f364eb749a.webp"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\ff72589e-ad8b-4c79-8131-7cc404d55b29.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\ff72589e-ad8b-4c79-8131-7cc404d55b29.jpg"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\imagenes\\imageLogo.png",
+      "PackagePath": "staticwebassets\\imagenes\\imageLogo.png"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\js\\Carrito.js",
+      "PackagePath": "staticwebassets\\js\\Carrito.js"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\js\\modalOpciones.js",
+      "PackagePath": "staticwebassets\\js\\modalOpciones.js"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\marwi\\Source\\Repos\\JardinSecretoProceso\\JardinSecretoPrueba1\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.JardinSecretoPrueba1.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.JardinSecretoPrueba1.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.JardinSecretoPrueba1.props",
+      "PackagePath": "build\\JardinSecretoPrueba1.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.JardinSecretoPrueba1.props",
+      "PackagePath": "buildMultiTargeting\\JardinSecretoPrueba1.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.JardinSecretoPrueba1.props",
+      "PackagePath": "buildTransitive\\JardinSecretoPrueba1.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,38 @@
+﻿@model JardinSecretoPrueba1.Models.Categoria
+
+@{
+    ViewData["Title"] = "Eliminar Categoría";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container my-5">
+    <div class="admin-panel">
+
+        <div class="admin-panel-header">
+            <h2><i class="fas fa-exclamation-triangle me-3 text-danger"></i>Confirmar Eliminación</h2>
+        </div>
+
+        <h4 class="text-danger mt-4">¿Estás seguro de que quieres eliminar esta categoría?</h4>
+        <p class="text-white-50">Esta acción no se puede deshacer.</p>
+
+        <dl class="row mt-4">
+            <dt class="col-sm-3">Nombre</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Nombre)</dd>
+
+            <dt class="col-sm-3">Descripción</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Descripcion)</dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="CategoriaId" />
+
+            <div class="admin-footer">
+                <a asp-action="Index" class="btn btn-outline-light me-2">Cancelar</a>
+                <button type="submit" class="btn btn-danger">
+                    <i class="fas fa-trash-alt me-2"></i> Sí, Eliminar
+                </button>
+            </div>
+        </form>
+
+    </div>
+</div>

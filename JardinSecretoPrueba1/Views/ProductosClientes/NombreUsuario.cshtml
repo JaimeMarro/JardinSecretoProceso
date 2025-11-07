@@ -1,0 +1,183 @@
+﻿@{
+    ViewData["Title"] = "Datos del Cliente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row justify-content-center align-items-center" style="min-height: 70vh;">
+    <div class="col-md-6 col-lg-5">
+
+        <div class="login-card">
+
+            <h2>¡Bienvenido!</h2>
+            <p class="text-center text-white-50 mb-4" style="margin-top: -1rem;">Ingresa tus datos para continuar</p>
+
+            <form asp-action="NombreUsuario" method="post">
+
+                <div class="mb-3">
+                    <label for="nombreUsuario" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="apellidoUsuario" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="apellidoUsuario" name="apellidoUsuario" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="telefonoUsuario" class="form-label">Teléfono</label>
+                    <input type="tel" class="form-control" id="telefonoUsuario" name="telefonoUsuario"
+                           pattern="[0-9]{8}" maxlength="8" placeholder="Ejemplo: 77778888" required />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Tipo de pedido</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="tipoPedido" id="delivery" value="Delivery" required />
+                        <label class="form-check-label" for="delivery">Delivery</label>
+                        <span id="deliveryError" class="text-danger small d-block mt-1"></span>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="tipoPedido" id="recoger" value="Pasar a recoger" />
+                        <label class="form-check-label" for="recoger">Pasar a recoger</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="tipoPedido" id="comer" value="Comer en restaurante" />
+                        <label class="form-check-label" for="comer">Comer en restaurante</label>
+                    </div>
+                </div>
+
+                <div class="mb-3" id="direccionContainer" style="display: none;">
+                    <label for="direccionUsuario" class="form-label">Dirección de entrega: <br /> <b>Solo se aceptaran pedidos si el restaurante esta abierto</b></label>
+                    <textarea class="form-control" id="direccionUsuario" name="direccionUsuario" rows="3"
+                              placeholder="Ejemplo: Calle Los Laureles #12, Col. San Benito"></textarea>
+                </div>
+                <div class="mb-3" id="horaContainer" style="display:none;">
+                    <label for="horaPedido" class="form-label">Hora (Horario: 4 PM - 2 AM, cerrado miércoles)</label>
+                    <input type="time" class="form-control" id="horaPedido" name="horaPedido" />
+                    <span id="horaError" class="text-danger small d-block mt-1"></span>
+                </div>
+
+                <div class="d-grid mt-4">
+                    <button type="submit" class="btn btn-success w-100 btn-lg">Continuar</button>
+                </div>
+            </form>
+
+            <div class="text-center mt-3">
+                <a class="text-white-50" asp-controller="Home" asp-action="Index">Volver al inicio</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // --- 1. OBTENER TODOS LOS ELEMENTOS ---
+            const tipoPedidoRadios = document.querySelectorAll('input[name="tipoPedido"]');
+            const direccionContainer = document.getElementById("direccionContainer");
+            const horaContainer = document.getElementById("horaContainer");
+            const horaInput = document.getElementById("horaPedido");
+            const horaErrorSpan = document.getElementById("horaError");
+            const submitButton = document.querySelector('button[type="submit"]');
+
+            // Elementos específicos de Delivery
+            const deliveryRadio = document.getElementById("delivery");
+            const deliveryLabel = document.querySelector("label[for='delivery']");
+            const deliveryErrorSpan = document.getElementById("deliveryError");
+
+            // --- 2. LÓGICA DE HORARIO CENTRALIZADA ---
+            // Esta función nos dice si el restaurante está abierto AHORA MISMO
+            function obtenerEstadoRestaurante() {
+                const ahora = new Date(); // Hora local del navegador
+                const diaSemana = ahora.getDay(); // 0=Domingo, 3=Miércoles
+                const hora = ahora.getHours(); // 0-23
+
+                // Validar Miércoles
+                if (diaSemana === 3) {
+                    return { abierto: false, mensaje: "Cerrado los miércoles." };
+                }
+
+                // Validar Rango Horario: 4 PM (16) a 2 AM (hora < 2)
+                const estaEnRango = (hora >= 16 || hora < 2);
+                if (estaEnRango) {
+                    return { abierto: true, mensaje: "" };
+                } else {
+                    return { abierto: false, mensaje: "Restaurante fuera de horario (4 PM - 2 AM)." };
+                }
+            }
+
+            // --- 3. FUNCIÓN PARA VALIDAR DELIVERY ---
+            // Se ejecuta al cargar la página
+            function validarDisponibilidadDelivery() {
+            const estado = obtenerEstadoRestaurante();
+
+            if (estado.abierto) {
+                // Restaurante Abierto: Habilitar Delivery
+                deliveryRadio.disabled = false;
+                deliveryErrorSpan.textContent = ""; // Limpia el error
+            } else {
+                // Restaurante Cerrado: Deshabilitar Delivery
+                deliveryRadio.disabled = true;
+                deliveryRadio.checked = false; // Desmarcarlo por si estaba seleccionado
+                deliveryErrorSpan.textContent = estado.mensaje + " Delivery no disponible.";
+            }
+        }
+
+            // --- 4. FUNCIÓN PARA VALIDAR LA HORA (Recoger/Comer) ---
+            // (Esta es tu función anterior, pero ahora usa la lógica central)
+            function validarHora() {
+                if (horaContainer.style.display !== 'block' || !horaInput.value) {
+                    horaErrorSpan.textContent = "";
+                    submitButton.disabled = false;
+                    return true;
+                }
+
+                // Revisa si el restaurante está cerrado (ej. Miércoles)
+                const estado = obtenerEstadoRestaurante();
+                if (!estado.abierto) {
+                    horaErrorSpan.textContent = estado.mensaje;
+                    submitButton.disabled = true;
+                    return false;
+                }
+
+                // Validar el rango de la HORA SELECCIONADA por el usuario
+                const horaSeleccionada = horaInput.value.split(":");
+                const hora = parseInt(horaSeleccionada[0]);
+                const estaEnRango = (hora >= 16 || hora < 2);
+
+                if (estaEnRango) {
+                    horaErrorSpan.textContent = "";
+                    submitButton.disabled = false;
+                    return true;
+                } else {
+                    horaErrorSpan.textContent = "La hora seleccionada está fuera del horario (4 PM - 2 AM).";
+                    submitButton.disabled = true;
+                    return false;
+                }
+            }
+
+            // --- 5. ACTIVAR LOS LISTENERS ---
+
+            // Listener para los botones de Tipo de Pedido
+            tipoPedidoRadios.forEach(radio => {
+                radio.addEventListener("change", () => {
+                    const esRecogerOComer = (radio.value === "Pasar a recoger" || radio.value === "Comer en restaurante");
+
+                    direccionContainer.style.display = radio.value === "Delivery" ? "block" : "none";
+                    horaContainer.style.display = esRecogerOComer ? "block" : "none";
+                    horaInput.required = esRecogerOComer;
+
+                    validarHora(); // Revalidar la hora por si acaso
+                });
+            });
+
+            // Listener para el campo de Hora
+            horaInput.addEventListener("input", validarHora);
+
+            // --- 6. EJECUTAR AL CARGAR ---
+            validarDisponibilidadDelivery(); // Validar Delivery al cargar
+            validarHora();                   // Validar la hora al cargar
+        });
+    </script>
+}
