@@ -1,0 +1,136 @@
+﻿@model IEnumerable<JardinSecretoPrueba1.Models.Producto>
+@{
+    ViewData["Title"] = "Menú Cliente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var nombreUsuario = ViewBag.Nombre ?? "Invitado";
+    var tipoPedido = ViewBag.TipoPedido ?? "No especificado";
+
+    // 1. Obtenemos la lista de categorías del controlador (ViewBag)
+    // El controlador ahora garantiza que esta lista existe.
+    var todasLasCategorias = ViewBag.TodasLasCategorias as List<string> ?? new List<string>();
+
+    // 2. Agrupamos los productos que SÍ tenemos en un diccionario para buscarlos fácilmente.
+    var productosAgrupados = Model
+        .GroupBy(p => p.Categoria.Nombre)
+        .ToDictionary(g => g.Key, g => g.ToList());
+}
+
+<div class="container text-center my-5">
+    <h1 class="display-4 fw-bold">Hola, <span class="text-brand-primary">@nombreUsuario</span>!</h1>
+    <p class="lead text-white-50">Estás realizando un pedido para: <strong>@tipoPedido</strong></p>
+    @if (ViewBag.TipoPedido == "Delivery")
+    {
+        <p class="text-white-50">Dirección de entrega: <strong>@ViewBag.Direccion</strong></p>
+    }
+    else if (!string.IsNullOrEmpty(ViewBag.HoraPedido))
+    {
+        <p class="text-white-50">Hora del pedido: <strong>@ViewBag.HoraPedido</strong></p>
+    }
+</div>
+
+<ul class="nav nav-pills nav-fill mb-4" id="categoryTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="tab-all" data-bs-toggle="pill" data-bs-target="#pane-all" type="button" role="tab" aria-selected="true">
+            Todos
+        </button>
+    </li>
+
+    @foreach (var categoriaNombre in todasLasCategorias)
+    {
+        var tabId = categoriaNombre.Replace(" ", "-").ToLower();
+
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tab-@tabId" data-bs-toggle="pill" data-bs-target="#pane-@tabId" type="button" role="tab" aria-selected="false">
+                @categoriaNombre
+            </button>
+        </li>
+    }
+</ul>
+
+<div class="tab-content" id="categoryTabContent">
+
+    <div class="tab-pane fade show active" id="pane-all" role="tabpanel" aria-labelledby="tab-all">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <img src="@item.ImagenUrl" class="card-img-top" alt="@item.Nombre">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Nombre</h5>
+                            <p class="card-text">$@item.Precio</p>
+                            <a href="#" data-id="@item.ProductoId" class="btn btn-success w-100 btn-agregar-modal">
+                                <i class="fa fa-cart-plus"></i> Agregar al carrito
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    @foreach (var categoriaNombre in todasLasCategorias)
+    {
+        var tabId = categoriaNombre.Replace(" ", "-").ToLower();
+
+        <div class="tab-pane fade" id="pane-@tabId" role="tabpanel" aria-labelledby="tab-@tabId">
+            <div class="row">
+
+                @if (productosAgrupados.ContainsKey(categoriaNombre))
+                {
+                    // Si esta categoría SÍ tiene productos, los mostramos
+                    @foreach (var item in productosAgrupados[categoriaNombre])
+                    {
+                        <div class="col-md-4 mb-4">
+                            <div class="card shadow-sm h-100">
+                                <img src="@item.ImagenUrl" class="card-img-top" alt="@item.Nombre">
+                                <div class="card-body">
+                                    <h5 class="card-title">@item.Nombre</h5>
+                                    <p class="card-text">$@item.Precio</p>
+                                    <a href="#" data-id="@item.ProductoId" class="btn btn-success w-100 btn-agregar-modal">
+                                        <i class="fa fa-cart-plus"></i> Agregar al carrito
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    // Si esta categoría NO tiene productos, mostramos un mensaje
+                    <div class="col-12 text-center py-5">
+                        <h4 class="text-white-50">No hay productos en "@categoriaNombre" por el momento.</h4>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</div>
+
+<div class="modal fade" id="modalOpcionesProducto" tabindex="-1" aria-labelledby="modalOpcionesLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content dark-modal border-0 shadow-lg">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalOpcionesLabel">Personaliza tu producto</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <h5 id="modalNombreProducto" class="text-center mb-3"></h5>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">🍦 Sabor:</label>
+                    <div id="opcionesSabor"><p class="text-white-50 small">Cargando sabores...</p></div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">🍫 Extras (máx. 2):</label>
+                    <div id="opcionesExtras" class="form-control" style="height: 100px; overflow-y: auto;"><p class="text-white-50 small">Cargando extras...</p></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" id="btnAgregarAlCarrito" class="btn btn-success">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/modalOpciones.js"></script>

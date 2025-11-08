@@ -1,0 +1,628 @@
+/* ===== TEMA NEÓN JARDÍN SECRETO (VERSIÓN COMPLETA) ===== */
+
+/* 1. Definición de la paleta de colores */
+:root {
+    --color-primario-neon: #39FF14; /* Verde Neón para texto de marca */
+    --color-boton-verde: #1db954; /* Verde Sólido para botones */
+    --color-acento-neon: #FF4500; /* Rojo/Naranja del logo */
+    --color-fondo-oscuro: #1a1a1a;
+    --color-superficie-oscura: #2b2b2b;
+    --color-texto-principal: #EAEAEA;
+    --color-texto-enfasis: #FFFFFF;
+    --color-borde-sutil: #404040;
+}
+
+/* 2. Estilos Generales (¡ESTA ES LA PARTE QUE FALTABA!) */
+body {
+    background-color: var(--color-fondo-oscuro);
+    color: var(--color-texto-principal);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-texto-enfasis);
+}
+
+/* 3. Estilo de la Barra de Navegación (Navbar) */
+.navbar {
+    background-color: var(--color-superficie-oscura) !important;
+    border-bottom: 1px solid var(--color-borde-sutil);
+}
+
+    .navbar .navbar-brand span {
+        color: var(--color-texto-enfasis) !important;
+    }
+
+    .navbar .nav-link {
+        color: var(--color-texto-principal) !important;
+        transition: color 0.3s ease;
+    }
+
+        .navbar .nav-link:hover {
+            color: var(--color-primario-neon) !important;
+        }
+
+/* 4. Estilo de Botones */
+.btn-success {
+    background-color: var(--color-boton-verde);
+    border-color: var(--color-boton-verde);
+    color: var(--color-texto-enfasis);
+    box-shadow: 0 0 8px rgba(29, 185, 84, 0.4);
+    transition: all 0.3s ease;
+}
+
+    .btn-success:hover {
+        background-color: #1aa34a;
+        border-color: #1aa34a;
+        box-shadow: 0 0 12px rgba(29, 185, 84, 0.6);
+        transform: translateY(-2px);
+    }
+
+.btn-outline-success {
+    border-color: var(--color-boton-verde);
+    color: var(--color-boton-verde);
+    transition: all 0.3s ease;
+}
+
+    .btn-outline-success:hover {
+        background-color: var(--color-boton-verde);
+        color: var(--color-texto-enfasis);
+        box-shadow: 0 0 8px rgba(29, 185, 84, 0.4);
+        transform: translateY(-2px);
+    }
+
+/* Estilo para badges "suaves" que se ven bien en temas oscuros */
+.badge.bg-success-soft {
+    background-color: rgba(25, 135, 84, 0.2); /* Fondo verde transparente */
+    color: #198754; /* Texto verde */
+    border: 1px solid rgba(25, 135, 84, 0.4);
+}
+
+.badge.bg-danger-soft {
+    background-color: rgba(220, 53, 69, 0.2); /* Fondo rojo transparente */
+    color: #dc3545; /* Texto rojo */
+    border: 1px solid rgba(220, 53, 69, 0.4);
+}
+
+/* 5. Estilo del Footer */
+.footer {
+    background-color: var(--color-superficie-oscura);
+    color: var(--color-texto-principal);
+    border-top: 1px solid var(--color-borde-sutil);
+}
+
+/* 6. Clases personalizadas de texto */
+.text-brand-primary {
+    color: var(--color-primario-neon) !important;
+}
+
+.text-brand-accent {
+    color: var(--color-acento-neon) !important;
+}
+
+/* 7. Estilos para Formularios */
+.login-card {
+    background-color: var(--color-superficie-oscura);
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-borde-sutil);
+    box-shadow: 0 0 25px rgba(29, 185, 84, 0.15); /* Sombra verde */
+}
+
+    .login-card h2 {
+        color: var(--color-primario-neon);
+        text-align: center;
+        margin-bottom: 2rem;
+        font-weight: bold;
+        text-shadow: 0 0 8px rgba(57, 255, 20, 0.6);
+    }
+
+.form-label {
+    color: var(--color-texto-principal);
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    background-color: var(--color-fondo-oscuro);
+    border: 1px solid var(--color-borde-sutil);
+    color: var(--color-texto-principal);
+    padding: 0.75rem 1rem;
+}
+
+    .form-control:focus {
+        background-color: var(--color-fondo-oscuro);
+        color: var(--color-texto-principal);
+        border-color: var(--color-boton-verde); /* Borde verde sólido */
+        box-shadow: 0 0 10px rgba(29, 185, 84, 0.6); /* Brillo verde */
+    }
+
+    .form-control:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 30px var(--color-fondo-oscuro) inset !important;
+        -webkit-text-fill-color: var(--color-texto-principal) !important;
+    }
+/* 8. Estilos para Formulario de Cliente */
+.form-check-input {
+    background-color: var(--color-fondo-oscuro);
+    border: 1px solid var(--color-borde-sutil);
+}
+
+    .form-check-input:checked {
+        background-color: var(--color-boton-verde);
+        border-color: var(--color-boton-verde);
+    }
+
+    .form-check-input:focus {
+        box-shadow: 0 0 10px rgba(29, 185, 84, 0.6); /* Brillo verde */
+    }
+
+.form-check-label {
+    color: var(--color-texto-principal);
+}
+/* 9. Estilos para Tarjetas de Productos */
+.product-card {
+    background-color: var(--color-superficie-oscura);
+    border: 1px solid var(--color-borde-sutil);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+    .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .product-card .card-img-top {
+        width: 100%;
+        height: 200px;
+        object-fit: contain; /* <-- ESTE ES EL CAMBIO CLAVE */
+        background-color: var(--color-fondo-oscuro); /* Rellena el espacio sobrante con el color de fondo */
+        padding: 5px; /* Añade un pequeño margen interno opcional */
+    }
+
+    .product-card .card-body {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-card .card-title {
+        color: var(--color-texto-enfasis);
+        font-weight: bold;
+    }
+
+    .product-card .price {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--color-boton-verde);
+        margin-bottom: 1rem;
+    }
+
+/* 10. Estilos para el Modal de Opciones */
+.modal-content.dark-modal {
+    background-color: var(--color-superficie-oscura);
+    color: var(--color-texto-principal);
+    border: 1px solid var(--color-borde-sutil);
+}
+
+    .modal-content.dark-modal .modal-header {
+        background-color: var(--color-fondo-oscuro);
+        border-bottom: 1px solid var(--color-borde-sutil);
+    }
+
+    .modal-content.dark-modal .modal-title {
+        color: var(--color-primario-neon); /* Verde neón para el título */
+    }
+
+    .modal-content.dark-modal .modal-footer {
+        border-top: 1px solid var(--color-borde-sutil);
+    }
+
+    .modal-content.dark-modal #modalNombreProducto {
+        color: var(--color-primario-neon);
+    }
+
+    .modal-content.dark-modal .form-label {
+        color: var(--color-texto-enfasis);
+    }
+
+    .modal-content.dark-modal #opcionesExtras {
+        background-color: var(--color-fondo-oscuro);
+        border-color: var(--color-borde-sutil);
+    }
+/* 11. ESTILOS SEGUROS PARA EL MENÚ DEL CLIENTE */
+
+/* Aplica el tema oscuro a las tarjetas de producto existentes */
+.row .card {
+    background-color: var(--color-superficie-oscura);
+    border: 1px solid var(--color-borde-sutil);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .row .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Estilos para el contenido de la tarjeta */
+    .row .card .card-img-top {
+        object-fit: contain; /* Muestra la imagen completa */
+        background-color: var(--color-fondo-oscuro);
+        height: 200px;
+    }
+
+    .row .card .card-title {
+        color: var(--color-texto-enfasis);
+    }
+
+    .row .card .card-text {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--color-boton-verde);
+    }
+/* 12. Estilos para el Carrito de Compras */
+
+.cart-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 1rem; /* Espacio vertical entre filas */
+}
+
+    .cart-table thead th {
+        color: var(--color-texto-principal);
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.8rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid var(--color-borde-sutil);
+    }
+
+    .cart-table tbody td {
+        background-color: var(--color-superficie-oscura);
+        padding: 1.5rem 1rem;
+        vertical-align: middle;
+    }
+
+    /* Redondear las esquinas de cada fila */
+    .cart-table tbody tr td:first-child {
+        border-radius: 8px 0 0 8px;
+    }
+
+    .cart-table tbody tr td:last-child {
+        border-radius: 0 8px 8px 0;
+    }
+
+.product-info .product-name {
+    font-weight: bold;
+    color: var(--color-texto-enfasis);
+    font-size: 1.1rem;
+}
+
+.product-info .product-details {
+    font-size: 0.8rem;
+    color: var(--color-texto-principal);
+    opacity: 0.7;
+}
+
+/* Estilo de los botones +/- */
+.quantity-adjuster {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-fondo-oscuro);
+    border-radius: 20px;
+    padding: 0.2rem;
+    border: 1px solid var(--color-borde-sutil);
+}
+
+.quantity-display {
+    padding: 0 1rem;
+    font-weight: bold;
+    color: var(--color-texto-enfasis); /* <-- AÑADIDO: Color blanco para el número */
+}
+
+.btn-quantity {
+    background-color: var(--color-superficie-oscura);
+    color: var(--color-texto-enfasis);
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+    .btn-quantity:hover {
+        background-color: var(--color-boton-verde);
+        color: white;
+    }
+
+/* Resumen y acciones */
+.cart-summary {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: var(--color-superficie-oscura);
+    border-radius: 8px;
+}
+
+.cart-total {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+    .cart-total .total-amount {
+        color: var(--color-boton-verde);
+    }
+
+.cart-actions {
+    margin-top: 2rem;
+}
+.cart-table .item-total {
+    color: var(--color-texto-principal); /* Color claro para el total de la fila */
+    font-weight: bold;
+}
+/* 13. Estilo para el badge de horarios clickeable */
+.clickable-badge {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+    .clickable-badge:hover {
+        transform: scale(1.05); /* Agranda ligeramente el badge */
+        opacity: 0.9; /* Lo hace un poco más transparente */
+    }
+/* 14. Estilos para el Panel de Administración */
+
+.admin-panel {
+    background-color: var(--color-superficie-oscura);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid var(--color-borde-sutil);
+}
+
+.admin-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--color-borde-sutil);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+    .admin-panel-header h2 {
+        margin: 0;
+        color: var(--color-texto-enfasis);
+        font-weight: bold;
+    }
+
+    .admin-panel-header .btn {
+        font-weight: bold;
+    }
+
+/* Estilo de la tabla de administración */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .admin-table thead th {
+        text-align: left;
+        color: var(--color-texto-principal);
+        opacity: 0.8;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        padding: 0.5rem 1rem 1.5rem 1rem;
+        border-bottom: 2px solid var(--color-borde-sutil);
+    }
+
+    .admin-table tbody tr {
+        border-bottom: 1px solid var(--color-borde-sutil);
+        transition: background-color 0.2s ease;
+    }
+
+        .admin-table tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        .admin-table tbody tr:hover {
+            background-color: var(--color-fondo-oscuro);
+        }
+
+    .admin-table tbody td {
+        padding: 1.5rem 1rem;
+        vertical-align: middle;
+        color: var(--color-texto-principal); /* <-- ESTA LÍNEA ES LA SOLUCIÓN */
+    }
+
+/* Estilo para los botones de acción (Editar, Borrar) */
+.action-buttons a {
+    color: var(--color-texto-principal);
+    text-decoration: none;
+    margin: 0 0.5rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+    .action-buttons a.btn-edit:hover {
+        background-color: #0d6efd; /* Azul Bootstrap */
+        color: white;
+    }
+
+    .action-buttons a.btn-details:hover {
+        background-color: #6c757d; /* Gris Bootstrap */
+        color: white;
+    }
+
+    .action-buttons a.btn-delete:hover {
+        background-color:
+    }
+
+.login-error-box {
+    /* Fondo rojo suave y translúcido */
+    background-color: rgba(220, 53, 69, 0.2);
+    /* Texto rojo claro (más legible en fondo oscuro) */
+    color: #f8d7da;
+    /* Borde rojo sutil */
+    border: 1px solid rgba(220, 53, 69, 0.5);
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px; /* Mismos bordes que tus inputs */
+    text-align: center;
+    font-weight: 500;
+}
+/* 15. Estilos para las Pestañas de Categorías (Estilo Minimalista CORREGIDO) */
+
+#categoryTabs .nav-link {
+    background-color: transparent !important; /* Sin fondo */
+    color: var(--color-texto-principal) !important; /* Color de texto normal */
+    border: none !important; /* Sin bordes */
+    border-bottom: 3px solid transparent; /* Espacio reservado para la línea */
+    box-shadow: none !important; /* Sin sombras */
+
+    margin: 0 5px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+    /* Cuando pasas el mouse sobre un botón INACTIVO */
+    #categoryTabs .nav-link:not(.active):hover {
+        background-color: transparent !important; /* Sin fondo */
+        color: #FF8C00 !important; /* <-- CORREGIDO: Naranja comida */
+        border-bottom: 3px solid transparent; /* Aún sin línea */
+    }
+
+    /* El botón que está ACTIVO */
+    #categoryTabs .nav-link.active {
+        background-color: transparent !important; /* Sin fondo */
+        color: #FF8C00 !important; /* <-- CORREGIDO: Naranja comida */
+        border: none !important;
+        border-bottom: 3px solid #FF8C00 !important; /* <-- CORREGIDO: Naranja comida */
+        box-shadow: none !important;
+    }
+
+/* 16. Estilos para Iconos Sociales */
+
+.social-icons-bar {
+    margin-bottom: 1.5rem; /* Espacio entre los íconos y el contenido */
+}
+
+    .social-icons-bar a {
+        color: var(--color-texto-principal);
+        border: 1px solid var(--color-borde-sutil);
+        width: 40px; /* Ancho fijo */
+        height: 40px; /* Alto fijo (para hacerlos circulares) */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%; /* Los hace circulares */
+        margin-left: 0.5rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+        .social-icons-bar a:hover {
+            background-color: #FF8C00; /* Usamos el naranja comida */
+            border-color: #FF8C00;
+            color: var(--color-texto-enfasis);
+            transform: scale(1.1); /* Efecto sutil al pasar el mouse */
+        }
+
+/* Corrección de enlaces en la sección de bienvenida */
+
+/* Elimina el subrayado de cualquier enlace en la sección de bienvenida y le da el color blanco */
+.container a:not(.btn) { /* <-- LA CORRECCIÓN ESTÁ AQUÍ */
+        text-decoration: none !important;
+        color: var(--color-texto-principal) !important;
+}
+
+    /* Fuerza el color verde neón para la marca (si está dentro de un enlace) */
+    .container a .text-brand-primary {
+        text-decoration: none !important;
+        color: var(--color-primario-neon) !important;
+    }
+
+    /* Corrige el color del texto visitado para que coincida con el normal */
+    .container a:visited {
+        color: var(--color-texto-principal) !important;
+        text-decoration: none !important;
+    }
+/* 15. Estilos para las Pestañas de Categorías (Estilo Minimalista CORREGIDO) */
+
+#categoryTabs .nav-link {
+    background-color: transparent !important; /* Sin fondo */
+    color: var(--color-texto-principal) !important; /* Color de texto normal */
+    border: none !important; /* Sin bordes */
+    border-bottom: 3px solid transparent; /* Espacio reservado para la línea */
+    box-shadow: none !important; /* Sin sombras */
+
+    margin: 0 5px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+    /* Cuando pasas el mouse sobre un botón INACTIVO */
+    #categoryTabs .nav-link:not(.active):hover {
+        background-color: transparent !important; /* Sin fondo */
+        color: #FF8C00 !important; /* <-- CORREGIDO: Naranja comida */
+        border-bottom: 3px solid transparent; /* Aún sin línea */
+    }
+
+    /* El botón que está ACTIVO */
+    #categoryTabs .nav-link.active {
+        background-color: transparent !important; /* Sin fondo */
+        color: #FF8C00 !important; /* <-- CORREGIDO: Naranja comida */
+        border: none !important;
+        border-bottom: 3px solid #FF8C00 !important; /* <-- CORREGIDO: Naranja comida */
+        box-shadow: none !important;
+    }
+
+/* 16. Estilos para Iconos Sociales */
+
+.social-icons-bar {
+    margin-bottom: 1.5rem; /* Espacio entre los íconos y el contenido */
+}
+
+    .social-icons-bar a {
+        color: var(--color-texto-principal);
+        border: 1px solid var(--color-borde-sutil);
+        width: 40px; /* Ancho fijo */
+        height: 40px; /* Alto fijo (para hacerlos circulares) */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%; /* Los hace circulares */
+        margin-left: 0.5rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+        .social-icons-bar a:hover {
+            background-color: #FF8C00; /* Usamos el naranja comida */
+            border-color: #FF8C00;
+            color: var(--color-texto-enfasis);
+            transform: scale(1.1); /* Efecto sutil al pasar el mouse */
+        }
+
+/* Corrección de enlaces en la sección de bienvenida */
+
+/* Elimina el subrayado de cualquier enlace en la sección de bienvenida y le da el color blanco */
+.container a {
+    text-decoration: none !important;
+    color: var(--color-texto-principal) !important;
+}
+
+    /* Fuerza el color verde neón para la marca (si está dentro de un enlace) */
+    .container a .text-brand-primary {
+        text-decoration: none !important;
+        color: var(--color-primario-neon) !important;
+    }
+
+    /* Corrige el color del texto visitado para que coincida con el normal */
+    .container a:visited {
+        color: var(--color-texto-principal) !important;
+        text-decoration: none !important;
+    }

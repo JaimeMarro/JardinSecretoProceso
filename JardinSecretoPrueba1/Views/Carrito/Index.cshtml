@@ -1,0 +1,96 @@
+﻿@model List<JardinSecretoPrueba1.Models.CarritoItem>
+@{
+    ViewData["Title"] = "Carrito de Compras";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container my-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold"><span class="text-brand-primary">Carrito</span> de Compras</h1>
+    </div>
+
+    @if (Model != null && Model.Any())
+    {
+        <table class="table cart-table">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th class="text-center">Cantidad</th>
+                    <th class="text-end">Total</th>
+                    <th class="text-center">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <div class="product-info">
+                                <div class="product-name">@item.Nombre</div>
+
+                                <div class="product-details mt-2">
+                                    @if (!string.IsNullOrEmpty(item.SaborNombre))
+                                    {
+                                        <small>
+                                            Sabor: @item.SaborNombre
+                                            @if (item.SaborPrecio > 0)
+                                            {
+                                                <span class="ms-1">(+ $@item.SaborPrecio.ToString("0.00"))</span>
+                                            }
+                                            <br />
+                                            @if (item.Extras != null && item.Extras.Any())
+                                            {
+                                                <span>Extras: @string.Join(", ", item.Extras.Select(e => $"{e.Nombre} (+${e.Precio.ToString("0.00")})"))</span>
+                                            }
+                                        </small>
+                                    }
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-center">
+                            <div class="quantity-adjuster d-inline-flex">
+                                <a asp-action="Restar" asp-route-id="@item.CartItemId" class="btn-quantity text-decoration-none">-</a>
+                                <span class="quantity-display">@item.Cantidad</span>
+                                <a asp-action="Sumar" asp-route-id="@item.CartItemId" class="btn-quantity text-decoration-none">+</a>
+                            </div>
+                        </td>
+                        <td class="text-end item-total">
+                            $@item.Subtotal.ToString("0.00")
+                        </td>
+                        <td class="text-center">
+                            <a asp-action="Quitar" asp-route-id="@item.CartItemId" class="btn btn-sm btn-outline-danger">Quitar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="row justify-content-end">
+            <div class="col-md-5">
+                <div class="cart-summary">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="cart-total">Total:</span>
+                        <span class="cart-total total-amount">$@Model.Sum(item => item.Subtotal).ToString("0.00")</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mt-3 cart-actions">
+                    <a asp-action="Vaciar" class="btn btn-outline-warning">Vaciar carrito</a>
+                    <a asp-action="EnviarPedidoWhatsApp" class="btn btn-success btn-lg">Enviar pedido por WhatsApp</a>
+
+                </div>
+                <br />
+                <a asp-controller="ProductosClientes" asp-action="Index" class="btn btn-outline-light me-2">
+                    <i class="fas fa-arrow-left me-1"></i> Ver Menú
+                </a>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="text-center py-5">
+            <i class="fas fa-shopping-cart fa-4x text-white-50 mb-3"></i>
+            <h3 class="text-white-50">Tu carrito está vacío.</h3>
+            <a asp-controller="ProductosClientes" asp-action="Index" class="btn btn-success mt-3">Ver Menú</a>
+        </div>
+    }
+</div>

@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center mt-5">
+    <h1 class="display-4 fw-bold d-flex justify-content-center align-items-center">
+        <img src="~/imagenes/imageLogo.png" alt="Logo Jardín Secreto" style="height: 60px;" class="me-3" />
+        <span>Bienvenido a <span class="text-brand-primary">Jardín Secreto</span></span>
+    </h1>
+
+    <p class="lead text-white-50 mb-5">Tu restaurante en línea - pide tus platillos favoritos de manera rápida y sencilla</p>
+
+    <div class="row justify-content-center g-4">
+        <div class="col-md-3">
+            <a class="btn btn-outline-success btn-lg w-100 shadow" asp-controller="Auth" asp-action="Login">
+                <i class="fas fa-user-lock me-2"></i> Iniciar sesión Admin
+            </a>
+        </div>
+
+        <div class="col-md-3">
+            <a class="btn btn-success btn-lg w-100 shadow" asp-controller="ProductosClientes" asp-action="NombreUsuario">
+                <i class="fas fa-utensils me-2"></i> Ver Menú
+            </a>
+        </div>
+    </div>
+</div>
