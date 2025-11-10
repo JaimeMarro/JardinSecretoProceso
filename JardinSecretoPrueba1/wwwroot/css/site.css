@@ -1,9 +1,9 @@
-/* ===== TEMA NE”N JARDÕN SECRETO (VERSI”N COMPLETA) ===== */
+/* ===== TEMA NE√ìN JARD√çN SECRETO (VERSI√ìN COMPLETA) ===== */
 
-/* 1. DefiniciÛn de la paleta de colores */
+/* 1. Definici√≥n de la paleta de colores */
 :root {
-    --color-primario-neon: #39FF14; /* Verde NeÛn para texto de marca */
-    --color-boton-verde: #1db954; /* Verde SÛlido para botones */
+    --color-primario-neon: #39FF14; /* Verde Ne√≥n para texto de marca */
+    --color-boton-verde: #1db954; /* Verde S√≥lido para botones */
     --color-acento-neon: #FF4500; /* Rojo/Naranja del logo */
     --color-fondo-oscuro: #1a1a1a;
     --color-superficie-oscura: #2b2b2b;
@@ -12,7 +12,7 @@
     --color-borde-sutil: #404040;
 }
 
-/* 2. Estilos Generales (°ESTA ES LA PARTE QUE FALTABA!) */
+/* 2. Estilos Generales (¬°ESTA ES LA PARTE QUE FALTABA!) */
 body {
     background-color: var(--color-fondo-oscuro);
     color: var(--color-texto-principal);
@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-texto-enfasis);
 }
 
-/* 3. Estilo de la Barra de NavegaciÛn (Navbar) */
+/* 3. Estilo de la Barra de Navegaci√≥n (Navbar) */
 .navbar {
     background-color: var(--color-superficie-oscura) !important;
     border-bottom: 1px solid var(--color-borde-sutil);
@@ -131,7 +131,7 @@ h1, h2, h3, h4, h5, h6 {
     .form-control:focus {
         background-color: var(--color-fondo-oscuro);
         color: var(--color-texto-principal);
-        border-color: var(--color-boton-verde); /* Borde verde sÛlido */
+        border-color: var(--color-boton-verde); /* Borde verde s√≥lido */
         box-shadow: 0 0 10px rgba(29, 185, 84, 0.6); /* Brillo verde */
     }
 
@@ -179,7 +179,7 @@ h1, h2, h3, h4, h5, h6 {
         height: 200px;
         object-fit: contain; /* <-- ESTE ES EL CAMBIO CLAVE */
         background-color: var(--color-fondo-oscuro); /* Rellena el espacio sobrante con el color de fondo */
-        padding: 5px; /* AÒade un pequeÒo margen interno opcional */
+        padding: 5px; /* A√±ade un peque√±o margen interno opcional */
     }
 
     .product-card .card-body {
@@ -213,7 +213,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .modal-content.dark-modal .modal-title {
-        color: var(--color-primario-neon); /* Verde neÛn para el tÌtulo */
+        color: var(--color-primario-neon); /* Verde ne√≥n para el t√≠tulo */
     }
 
     .modal-content.dark-modal .modal-footer {
@@ -232,7 +232,7 @@ h1, h2, h3, h4, h5, h6 {
         background-color: var(--color-fondo-oscuro);
         border-color: var(--color-borde-sutil);
     }
-/* 11. ESTILOS SEGUROS PARA EL MEN⁄ DEL CLIENTE */
+/* 11. ESTILOS SEGUROS PARA EL MEN√ö DEL CLIENTE */
 
 /* Aplica el tema oscuro a las tarjetas de producto existentes */
 .row .card {
@@ -320,7 +320,7 @@ h1, h2, h3, h4, h5, h6 {
 .quantity-display {
     padding: 0 1rem;
     font-weight: bold;
-    color: var(--color-texto-enfasis); /* <-- A—ADIDO: Color blanco para el n˙mero */
+    color: var(--color-texto-enfasis); /* <-- A√ëADIDO: Color blanco para el n√∫mero */
 }
 
 .btn-quantity {
@@ -371,9 +371,9 @@ h1, h2, h3, h4, h5, h6 {
 
     .clickable-badge:hover {
         transform: scale(1.05); /* Agranda ligeramente el badge */
-        opacity: 0.9; /* Lo hace un poco m·s transparente */
+        opacity: 0.9; /* Lo hace un poco m√°s transparente */
     }
-/* 14. Estilos para el Panel de AdministraciÛn */
+/* 14. Estilos para el Panel de Administraci√≥n */
 
 .admin-panel {
     background-color: var(--color-superficie-oscura);
@@ -401,7 +401,7 @@ h1, h2, h3, h4, h5, h6 {
         font-weight: bold;
     }
 
-/* Estilo de la tabla de administraciÛn */
+/* Estilo de la tabla de administraci√≥n */
 .admin-table {
     width: 100%;
     border-collapse: collapse;
@@ -434,10 +434,10 @@ h1, h2, h3, h4, h5, h6 {
     .admin-table tbody td {
         padding: 1.5rem 1rem;
         vertical-align: middle;
-        color: var(--color-texto-principal); /* <-- ESTA LÕNEA ES LA SOLUCI”N */
+        color: var(--color-texto-principal); /* <-- ESTA L√çNEA ES LA SOLUCI√ìN */
     }
 
-/* Estilo para los botones de acciÛn (Editar, Borrar) */
+/* Estilo para los botones de acci√≥n (Editar, Borrar) */
 .action-buttons a {
     color: var(--color-texto-principal);
     text-decoration: none;
@@ -457,14 +457,12 @@ h1, h2, h3, h4, h5, h6 {
         color: white;
     }
 
-    .action-buttons a.btn-delete:hover {
-        background-color:
-    }
+
 
 .login-error-box {
-    /* Fondo rojo suave y transl˙cido */
+    /* Fondo rojo suave y transl√∫cido */
     background-color: rgba(220, 53, 69, 0.2);
-    /* Texto rojo claro (m·s legible en fondo oscuro) */
+    /* Texto rojo claro (m√°s legible en fondo oscuro) */
     color: #f8d7da;
     /* Borde rojo sutil */
     border: 1px solid rgba(220, 53, 69, 0.5);
@@ -474,13 +472,13 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     font-weight: 500;
 }
-/* 15. Estilos para las PestaÒas de CategorÌas (Estilo Minimalista CORREGIDO) */
+/* 15. Estilos para las Pesta√±as de Categor√≠as (Estilo Minimalista CORREGIDO) */
 
 #categoryTabs .nav-link {
     background-color: transparent !important; /* Sin fondo */
     color: var(--color-texto-principal) !important; /* Color de texto normal */
     border: none !important; /* Sin bordes */
-    border-bottom: 3px solid transparent; /* Espacio reservado para la lÌnea */
+    border-bottom: 3px solid transparent; /* Espacio reservado para la l√≠nea */
     box-shadow: none !important; /* Sin sombras */
 
     margin: 0 5px;
@@ -488,14 +486,14 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.2s ease;
 }
 
-    /* Cuando pasas el mouse sobre un botÛn INACTIVO */
+    /* Cuando pasas el mouse sobre un bot√≥n INACTIVO */
     #categoryTabs .nav-link:not(.active):hover {
         background-color: transparent !important; /* Sin fondo */
         color: #FF8C00 !important; /* <-- CORREGIDO: Naranja comida */
-        border-bottom: 3px solid transparent; /* A˙n sin lÌnea */
+        border-bottom: 3px solid transparent; /* A√∫n sin l√≠nea */
     }
 
-    /* El botÛn que est· ACTIVO */
+    /* El bot√≥n que est√° ACTIVO */
     #categoryTabs .nav-link.active {
         background-color: transparent !important; /* Sin fondo */
         color: #FF8C00 !important; /* <-- CORREGIDO: Naranja comida */
@@ -507,7 +505,7 @@ h1, h2, h3, h4, h5, h6 {
 /* 16. Estilos para Iconos Sociales */
 
 .social-icons-bar {
-    margin-bottom: 1.5rem; /* Espacio entre los Ìconos y el contenido */
+    margin-bottom: 1.5rem; /* Espacio entre los √≠conos y el contenido */
 }
 
     .social-icons-bar a {
@@ -531,91 +529,15 @@ h1, h2, h3, h4, h5, h6 {
             transform: scale(1.1); /* Efecto sutil al pasar el mouse */
         }
 
-/* CorrecciÛn de enlaces en la secciÛn de bienvenida */
+/* Correcci√≥n de enlaces en la secci√≥n de bienvenida */
 
-/* Elimina el subrayado de cualquier enlace en la secciÛn de bienvenida y le da el color blanco */
-.container a:not(.btn) { /* <-- LA CORRECCI”N EST¡ AQUÕ */
-    † † text-decoration: none !important;
-    † † color: var(--color-texto-principal) !important;
-}
-
-    /* Fuerza el color verde neÛn para la marca (si est· dentro de un enlace) */
-    .container a .text-brand-primary {
-        text-decoration: none !important;
-        color: var(--color-primario-neon) !important;
-    }
-
-    /* Corrige el color del texto visitado para que coincida con el normal */
-    .container a:visited {
-        color: var(--color-texto-principal) !important;
-        text-decoration: none !important;
-    }
-/* 15. Estilos para las PestaÒas de CategorÌas (Estilo Minimalista CORREGIDO) */
-
-#categoryTabs .nav-link {
-    background-color: transparent !important; /* Sin fondo */
-    color: var(--color-texto-principal) !important; /* Color de texto normal */
-    border: none !important; /* Sin bordes */
-    border-bottom: 3px solid transparent; /* Espacio reservado para la lÌnea */
-    box-shadow: none !important; /* Sin sombras */
-
-    margin: 0 5px;
-    font-weight: bold;
-    transition: all 0.2s ease;
-}
-
-    /* Cuando pasas el mouse sobre un botÛn INACTIVO */
-    #categoryTabs .nav-link:not(.active):hover {
-        background-color: transparent !important; /* Sin fondo */
-        color: #FF8C00 !important; /* <-- CORREGIDO: Naranja comida */
-        border-bottom: 3px solid transparent; /* A˙n sin lÌnea */
-    }
-
-    /* El botÛn que est· ACTIVO */
-    #categoryTabs .nav-link.active {
-        background-color: transparent !important; /* Sin fondo */
-        color: #FF8C00 !important; /* <-- CORREGIDO: Naranja comida */
-        border: none !important;
-        border-bottom: 3px solid #FF8C00 !important; /* <-- CORREGIDO: Naranja comida */
-        box-shadow: none !important;
-    }
-
-/* 16. Estilos para Iconos Sociales */
-
-.social-icons-bar {
-    margin-bottom: 1.5rem; /* Espacio entre los Ìconos y el contenido */
-}
-
-    .social-icons-bar a {
-        color: var(--color-texto-principal);
-        border: 1px solid var(--color-borde-sutil);
-        width: 40px; /* Ancho fijo */
-        height: 40px; /* Alto fijo (para hacerlos circulares) */
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%; /* Los hace circulares */
-        margin-left: 0.5rem;
-        text-decoration: none;
-        transition: all 0.3s ease;
-    }
-
-        .social-icons-bar a:hover {
-            background-color: #FF8C00; /* Usamos el naranja comida */
-            border-color: #FF8C00;
-            color: var(--color-texto-enfasis);
-            transform: scale(1.1); /* Efecto sutil al pasar el mouse */
-        }
-
-/* CorrecciÛn de enlaces en la secciÛn de bienvenida */
-
-/* Elimina el subrayado de cualquier enlace en la secciÛn de bienvenida y le da el color blanco */
+/* Elimina el subrayado de cualquier enlace en la secci√≥n de bienvenida y le da el color blanco */
 .container a {
     text-decoration: none !important;
     color: var(--color-texto-principal) !important;
 }
 
-    /* Fuerza el color verde neÛn para la marca (si est· dentro de un enlace) */
+    /* Fuerza el color verde ne√≥n para la marca (si est√° dentro de un enlace) */
     .container a .text-brand-primary {
         text-decoration: none !important;
         color: var(--color-primario-neon) !important;
@@ -625,4 +547,123 @@ h1, h2, h3, h4, h5, h6 {
     .container a:visited {
         color: var(--color-texto-principal) !important;
         text-decoration: none !important;
+    }
+/* 15. Estilos para las Pesta√±as de Categor√≠as (Estilo Minimalista CORREGIDO) */
+
+#categoryTabs .nav-link {
+    background-color: transparent !important; /* Sin fondo */
+    color: var(--color-texto-principal) !important; /* Color de texto normal */
+    border: none !important; /* Sin bordes */
+    border-bottom: 3px solid transparent; /* Espacio reservado para la l√≠nea */
+    box-shadow: none !important; /* Sin sombras */
+
+    margin: 0 5px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+    /* Cuando pasas el mouse sobre un bot√≥n INACTIVO */
+    #categoryTabs .nav-link:not(.active):hover {
+        background-color: transparent !important; /* Sin fondo */
+        color: #FF8C00 !important; /* <-- CORREGIDO: Naranja comida */
+        border-bottom: 3px solid transparent; /* A√∫n sin l√≠nea */
+    }
+
+    /* El bot√≥n que est√° ACTIVO */
+    #categoryTabs .nav-link.active {
+        background-color: transparent !important; /* Sin fondo */
+        color: #FF8C00 !important; /* <-- CORREGIDO: Naranja comida */
+        border: none !important;
+        border-bottom: 3px solid #FF8C00 !important; /* <-- CORREGIDO: Naranja comida */
+        box-shadow: none !important;
+    }
+
+/* 16. Estilos para Iconos Sociales */
+
+.social-icons-bar {
+    margin-bottom: 1.5rem; /* Espacio entre los √≠conos y el contenido */
+}
+
+    .social-icons-bar a {
+        color: var(--color-texto-principal);
+        border: 1px solid var(--color-borde-sutil);
+        width: 40px; /* Ancho fijo */
+        height: 40px; /* Alto fijo (para hacerlos circulares) */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%; /* Los hace circulares */
+        margin-left: 0.5rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+        .social-icons-bar a:hover {
+            background-color: #FF8C00; /* Usamos el naranja comida */
+            border-color: #FF8C00;
+            color: var(--color-texto-enfasis);
+            transform: scale(1.1); /* Efecto sutil al pasar el mouse */
+        }
+
+/* Correcci√≥n de enlaces en la secci√≥n de bienvenida */
+
+/* Elimina el subrayado de cualquier enlace en la secci√≥n de bienvenida y le da el color blanco */
+.container a {
+    text-decoration: none !important;
+    color: var(--color-texto-principal) !important;
+}
+
+    /* Fuerza el color verde ne√≥n para la marca (si est√° dentro de un enlace) */
+    .container a .text-brand-primary {
+        text-decoration: none !important;
+        color: var(--color-primario-neon) !important;
+    }
+
+    /* Corrige el color del texto visitado para que coincida con el normal */
+    .container a:visited {
+        color: var(--color-texto-principal) !important;
+        text-decoration: none !important;
+    }
+/* 17. Correcci√≥n y Mejora para el bot√≥n 'Volver al Panel' */
+
+/* Estilo base del bot√≥n */
+.admin-footer .btn-outline-light {
+    color: var(--color-texto-principal);
+    background-color: transparent;
+    border-color: var(--color-borde-sutil); /* Borde gris sutil */
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+    /* Estilo al pasar el mouse (hover) */
+    .admin-footer .btn-outline-light:hover {
+        color: var(--color-boton-verde) !important; /* Texto verde */
+        border-color: var(--color-boton-verde) !important; /* Borde verde */
+        background-color: rgba(29, 185, 84, 0.1) !important; /* Brillo verde sutil */
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(29, 185, 84, 0.2);
+    }
+/* 18. Estilos para el Bot√≥n del Carrito en Navbar */
+
+/* Estilo base del bot√≥n del carrito */
+.navbar .btn-outline-light {
+    background-color: transparent !important; /* Fondo transparente por defecto */
+    border-color: var(--color-borde-sutil) !important; /* Borde gris sutil */
+    color: var(--color-texto-principal) !important; /* Icono blanco */
+    transition: all 0.2s ease-in-out;
+}
+
+    /* Efecto HOVER (Naranja, como tus pesta√±as y redes sociales) */
+    .navbar .btn-outline-light:hover {
+        background-color: rgba(255, 140, 0, 0.15) !important; /* Fondo NARANJA muy transl√∫cido */
+        border-color: #FF8C00 !important; /* Borde NARANJA */
+        color: #FF8C00 !important; /* Icono NARANJA */
+        transform: translateY(-2px); /* Efecto de elevaci√≥n */
+        box-shadow: 0 4px 10px rgba(255, 140, 0, 0.4); /* Sombra NARANJA */
+    }
+
+    /* Badge (el n√∫mero) del carrito */
+    .navbar .btn-outline-light .badge {
+        background-color: var(--color-acento-neon) !important; /* Mantiene el rojo/naranja del logo */
+        color: white !important;
     }
